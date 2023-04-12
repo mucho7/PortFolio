@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-function HeaderNavbar(params) {
+function HeaderNavbar() {
   const [scrolled, setScrolled] = useState(0);
   const navOptions = [
     { name: "About me" },
     { name: "Tech Stacks" },
-    { name: "Github" },
+    // { name: "Github" },
     { name: "Projects" },
     { name: "Career" },
   ];
