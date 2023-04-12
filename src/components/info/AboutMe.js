@@ -38,7 +38,7 @@ const TitleSection = styled.div`
   margin: 0 auto 3rem;
 `;
 
-const StyleForLargeTypo = `
+const StyleForTypo = `
   position: relative;
   font-weight: 400;
 
@@ -51,7 +51,7 @@ const StyleForLargeTypo = `
 `;
 
 const TitleTypo = styled.div`
-  ${StyleForLargeTypo}
+  ${StyleForTypo}
   width: auto;
 
   font-size: 3rem;
@@ -88,7 +88,7 @@ const StyledIcon = styled(Icon)`
 `;
 
 const SmallTypo = styled.div`
-  ${StyleForLargeTypo}
+  ${StyleForTypo}
   font-size: 1.2rem;
   font-weight: 800;
   font-family: "Noto Sans KR", sans-serif;

@@ -39,7 +39,7 @@ const HandmadeFilter = styled.div`
   height: 100%;
 `;
 
-const StyleForLargeTypo = `
+const StyleForTypo = `
   position: relative;
   font-weight: 400;
   text-align: center;
@@ -53,7 +53,7 @@ const StyleForLargeTypo = `
 `;
 
 const LargerTypo = styled.div`
-  ${StyleForLargeTypo}
+  ${StyleForTypo}
   font-size: 3rem;
   font-family: "BlackHanSans", sans-serif;
 
@@ -61,7 +61,7 @@ const LargerTypo = styled.div`
 `;
 
 const SmallTypo = styled.div`
-  ${StyleForLargeTypo}
+  ${StyleForTypo}
   font-size: 1.2rem;
   font-weight: 800;
   white-space: pre-wrap;
