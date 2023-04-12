@@ -38,7 +38,7 @@ const NavItemContainer = styled.div`
   ${getThemRow}
   font-weight: 700;
   font-size: 1rem;
-  width: 50%;
+  width: 40%;
 `;
 
 const MyNameBox = styled.div`
