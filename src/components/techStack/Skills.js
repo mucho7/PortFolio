@@ -21,7 +21,7 @@ function Skills() {
           return (
             <SkillItemBox key={index}>
               <SkillNameTypo>{name}</SkillNameTypo>
-              <img src={src} />
+              <SkillImg src={src} />
             </SkillItemBox>
           );
         })}
@@ -35,7 +35,7 @@ const SkillSection = styled.div`
   margin: 0 auto;
   background: #f9c51d;
 
-  height: 44rem;
+  height: 50rem;
 `;
 
 const TitleSection = styled.div`
@@ -81,7 +81,7 @@ const SkillContainer = styled.div`
 const SkillItemBox = styled.div`
   color: #f4623a;
   flex-shrink: 0;
-  width: 12rem;
+  width: auto;
   padding: 1.5rem;
   margin: 0 auto 2rem;
   border-radius: 1rem;
@@ -96,6 +96,10 @@ const SkillNameTypo = styled(TitleTypo)`
   font-size: 1.5rem;
   color: #f4623a;
   font-family: Noto Sans KR, sans-serif;
+`;
+
+const SkillImg = styled.img`
+  width: 15rem;
 `;
 
 export default Skills;
