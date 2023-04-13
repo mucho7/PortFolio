@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import Coco from "./Coco";
+import HelloWorld from "./HelloWorld";
 
 function Projects() {
   return (
@@ -10,7 +11,7 @@ function Projects() {
       </TitleSection>
       <SkillContainer>
         <Coco />
-        {/* 프로젝트는 따로 컴포넌트를 만들어서 넣자 */}
+        <HelloWorld />
       </SkillContainer>
     </ProjectSection>
   );

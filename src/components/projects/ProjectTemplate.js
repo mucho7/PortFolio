@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import React from "react";
 
 function ProjectCarousel(params) {
   const { images } = params;
@@ -28,8 +29,6 @@ function ProjectCarousel(params) {
     );
   };
 
-  //   const ImgBox =
-
   const settings = {
     infinite: true,
     speed: 500,
@@ -40,15 +39,15 @@ function ProjectCarousel(params) {
   };
 
   return (
-    <Slider {...settings}>
+    <StyledSlider {...settings}>
       {images.map((image, index) => {
         return (
-          <div key={index}>
-            <img src={image} alt={index} />
-          </div>
+          <ImageWrapper>
+            <Image src={image} alt={index} key={index} />
+          </ImageWrapper>
         );
       })}
-    </Slider>
+    </StyledSlider>
   );
 }
 
@@ -58,13 +57,19 @@ function ProjectDescript(params) {
 }
 
 function ProjectContent(params) {
-  const { title, content, descript, images } = params.data;
+  const { title, info, content, descript, images } = params.data;
   return (
     <TemplateBox>
       <TitleTypo>{title}</TitleTypo>
-      <ProjectCarousel images={images} />
-      <SmallTypo>{content}</SmallTypo>
-      <ProjectDescript descript={descript} />
+      <InfoTypo>{info}</InfoTypo>
+      <FlexBox>
+        <ProjectCarousel images={images} />
+        <ColFlexBox>
+          <SmallTypo>{content}</SmallTypo>
+          <HrLine />
+          <ProjectDescript descript={descript} />
+        </ColFlexBox>
+      </FlexBox>
     </TemplateBox>
   );
 }
@@ -76,7 +81,7 @@ const TemplateBox = styled.div`
   background-color: #fff;
 `;
 
-const StyleForTypo = `
+const styleForTypo = `
   position: relative;
   font-weight: 400;
 
@@ -89,7 +94,7 @@ const StyleForTypo = `
 `;
 
 const TitleTypo = styled.div`
-  ${StyleForTypo}
+  ${styleForTypo}
   padding-bottom: 0.5rem;
   font-family: BlackHanSans, sans-serif;
   font-weight: 400;
@@ -98,14 +103,72 @@ const TitleTypo = styled.div`
   text-align: center;
 `;
 
+const InfoTypo = styled.div`
+  ${styleForTypo}
+  margin-bottom: 2rem;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #6c757d;
+  text-align: center;
+  opacity: 0.8;
+`;
+
+const FlexBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+const StyledSlider = styled(Slider)`
+  width: 50%;
+  height: auto;
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 66.6666%;
+`;
+
+const Image = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+`;
+
 const SmallTypo = styled.div`
-  ${StyleForTypo}
+  ${styleForTypo}
   font-size: 1.2rem;
   font-weight: 800;
   font-family: "Noto Sans KR", sans-serif;
   white-space: pre-wrap;
 
   color: #212529;
+`;
+
+const ColFlexBox = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  margin-left: 5rem;
+  width: 100%;
+`;
+
+const HrLine = styled.hr`
+  height: 2px;
+  border: 0;
+  background-color: #dee2e6;
+  margin: 1rem 0;
 `;
 
 export { ProjectContent };
