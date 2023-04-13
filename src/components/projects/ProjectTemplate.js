@@ -29,6 +29,25 @@ function ProjectCarousel(params) {
     );
   };
 
+  const StyledSlider = styled(Slider)`
+    width: 50%;
+    height: auto;
+  `;
+
+  const ImageWrapper = styled.div`
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 66.6666%;
+  `;
+
+  const Image = styled.img`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  `;
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -62,14 +81,14 @@ function ProjectContent(params) {
     <TemplateBox>
       <TitleTypo>{title}</TitleTypo>
       <InfoTypo>{info}</InfoTypo>
-      <FlexBox>
+      <RowFlexBox>
         <ProjectCarousel images={images} />
         <ColFlexBox>
           <SmallTypo>{content}</SmallTypo>
           <HrLine />
           <ProjectDescript descript={descript} />
         </ColFlexBox>
-      </FlexBox>
+      </RowFlexBox>
     </TemplateBox>
   );
 }
@@ -113,7 +132,17 @@ const InfoTypo = styled.div`
   opacity: 0.8;
 `;
 
-const FlexBox = styled.div`
+const SmallTypo = styled.div`
+  ${styleForTypo}
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: "Noto Sans KR", sans-serif;
+  white-space: pre-wrap;
+
+  color: #212529;
+`;
+
+const RowFlexBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,39 +155,10 @@ const FlexBox = styled.div`
   }
 `;
 
-const StyledSlider = styled(Slider)`
-  width: 50%;
-  height: auto;
-`;
-
-const ImageWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 66.6666%;
-`;
-
-const Image = styled.img`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-`;
-
-const SmallTypo = styled.div`
-  ${styleForTypo}
-  font-size: 1.2rem;
-  font-weight: 800;
-  font-family: "Noto Sans KR", sans-serif;
-  white-space: pre-wrap;
-
-  color: #212529;
-`;
-
 const ColFlexBox = styled.div`
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
+  flex-wrap: wrap;
 
   margin-left: 5rem;
   width: 100%;
