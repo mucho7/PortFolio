@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
+import Coco from "./Coco";
 
 function Projects() {
   return (
@@ -8,6 +9,7 @@ function Projects() {
         <TitleTypo>PROJECTS</TitleTypo>
       </TitleSection>
       <SkillContainer>
+        <Coco />
         {/* 프로젝트는 따로 컴포넌트를 만들어서 넣자 */}
       </SkillContainer>
     </ProjectSection>
@@ -54,12 +56,6 @@ const TitleTypo = styled.div`
   line-height: 1.5;
 `;
 
-const SkillContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-
-  height: calc(100% - (7.5rem + 1px));
-`;
+const SkillContainer = styled.div``;
 
 export default Projects;
