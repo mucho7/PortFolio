@@ -1,11 +1,12 @@
 import Slider from "react-slick";
 
 import styled from "styled-components";
+import { marked } from "marked";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
-import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import { ArrowBackIos, ArrowForwardIos, Title } from "@mui/icons-material";
 import React from "react";
 
 function ProjectCarousel(params) {
@@ -70,9 +71,52 @@ function ProjectCarousel(params) {
   );
 }
 
+function ProjectDetail(params) {
+  const { content } = params;
+  const MarkdownWrapper = styled.div`
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  `;
+
+  const Markdown = ({ content }) => {
+    const html = marked(content);
+    return <MarkdownWrapper dangerouslySetInnerHTML={{ __html: html }} />;
+  };
+  return <Markdown content={content} />;
+}
+
 function ProjectDescript(params) {
   const { descript } = params;
-  return <SmallTypo>{descript}</SmallTypo>;
+  return (
+    <div>
+      {descript.map((item, index) => {
+        return (
+          <RowFlexBox
+            key={index}
+            style={{ justifyContent: "start", alignItems: "center" }}
+          >
+            <TitleTypo
+              style={{ textAlign: "start", fontSize: 24, width: "30%" }}
+            >
+              {item.name}
+            </TitleTypo>
+            <SmallTypo
+              style={{
+                textAlign: "start",
+                fontSize: 16,
+                fontWeight: 200,
+                width: "70%",
+                alignSelf: "center",
+              }}
+            >
+              {item.content}
+            </SmallTypo>
+          </RowFlexBox>
+        );
+      })}
+    </div>
+  );
 }
 
 function ProjectContent(params) {
@@ -84,7 +128,7 @@ function ProjectContent(params) {
       <RowFlexBox>
         <ProjectCarousel images={images} />
         <ColFlexBox>
-          <SmallTypo>{content}</SmallTypo>
+          <ProjectDetail content={content} />
           <HrLine />
           <ProjectDescript descript={descript} />
         </ColFlexBox>

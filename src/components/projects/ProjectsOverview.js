@@ -10,8 +10,8 @@ function Projects() {
         <TitleTypo>PROJECTS</TitleTypo>
       </TitleSection>
       <SkillContainer>
-        <Coco />
         <HelloWorld />
+        <Coco />
       </SkillContainer>
     </ProjectSection>
   );
