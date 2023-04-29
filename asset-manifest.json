@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/PortFolio/static/css/main.2e9fb1a6.css",
-    "main.js": "/PortFolio/static/js/main.137bdd3e.js",
+    "main.js": "/PortFolio/static/js/main.4a244f97.js",
     "static/js/787.2e9b76fa.chunk.js": "/PortFolio/static/js/787.2e9b76fa.chunk.js",
     "static/media/BlackHanSans-Regular.ttf": "/PortFolio/static/media/BlackHanSans-Regular.f4f89062321390018f92.ttf",
     "static/media/helloWorld (9).png": "/PortFolio/static/media/helloWorld (9).c15d41950b174939259a.png",
@@ -28,11 +28,11 @@
     "static/media/slick.woff": "/PortFolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/PortFolio/index.html",
     "main.2e9fb1a6.css.map": "/PortFolio/static/css/main.2e9fb1a6.css.map",
-    "main.137bdd3e.js.map": "/PortFolio/static/js/main.137bdd3e.js.map",
+    "main.4a244f97.js.map": "/PortFolio/static/js/main.4a244f97.js.map",
     "787.2e9b76fa.chunk.js.map": "/PortFolio/static/js/787.2e9b76fa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2e9fb1a6.css",
-    "static/js/main.137bdd3e.js"
+    "static/js/main.4a244f97.js"
   ]
 }
