@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/PortFolio/static/css/main.2e9fb1a6.css",
+    "main.js": "/PortFolio/static/js/main.137bdd3e.js",
+    "static/js/787.2e9b76fa.chunk.js": "/PortFolio/static/js/787.2e9b76fa.chunk.js",
+    "static/media/BlackHanSans-Regular.ttf": "/PortFolio/static/media/BlackHanSans-Regular.f4f89062321390018f92.ttf",
+    "static/media/helloWorld (9).png": "/PortFolio/static/media/helloWorld (9).c15d41950b174939259a.png",
+    "static/media/helloWorld (7).png": "/PortFolio/static/media/helloWorld (7).aa8f39e311e5a8b115c5.png",
+    "static/media/helloWorld (8).png": "/PortFolio/static/media/helloWorld (8).97c118241fe827ebd6c6.png",
+    "static/media/helloWorld (6).png": "/PortFolio/static/media/helloWorld (6).1c0438fbc051342ac27c.png",
+    "static/media/helloWorld (1).png": "/PortFolio/static/media/helloWorld (1).1d68966fe7090eae648c.png",
+    "static/media/coco (1).png": "/PortFolio/static/media/coco (1).165f368e8bb3a584c721.png",
+    "static/media/coco (3).png": "/PortFolio/static/media/coco (3).6944b516431b75b8a4e3.png",
+    "static/media/helloWorld (4).png": "/PortFolio/static/media/helloWorld (4).fa8f1ed9486b010b4698.png",
+    "static/media/helloWorld (2).png": "/PortFolio/static/media/helloWorld (2).d1a18ac7d785b3530a3f.png",
+    "static/media/deskSetUp.jpg": "/PortFolio/static/media/deskSetUp.b413f961cc5fbf7bd6ac.jpg",
+    "static/media/helloWorld (5).png": "/PortFolio/static/media/helloWorld (5).4c939f56a3cb172b8fbf.png",
+    "static/media/coco (2).png": "/PortFolio/static/media/coco (2).99e72f64c0de5c48dcc2.png",
+    "static/media/helloWorld (3).png": "/PortFolio/static/media/helloWorld (3).f5742f636715285b2e72.png",
+    "static/media/front.png": "/PortFolio/static/media/front.8d3be8342da50d9de6d0.png",
+    "static/media/coco (4).png": "/PortFolio/static/media/coco (4).cdef5c563a8638b99ade.png",
+    "static/media/commnu.png": "/PortFolio/static/media/commnu.e1c172e15a5ee4bdb84c.png",
+    "static/media/back.png": "/PortFolio/static/media/back.13e473b8ad568002a2f7.png",
+    "static/media/versionControl.png": "/PortFolio/static/media/versionControl.4f32c7551aab07f4342f.png",
+    "static/media/slick.svg": "/PortFolio/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/PortFolio/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/PortFolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/PortFolio/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/PortFolio/index.html",
+    "main.2e9fb1a6.css.map": "/PortFolio/static/css/main.2e9fb1a6.css.map",
+    "main.137bdd3e.js.map": "/PortFolio/static/js/main.137bdd3e.js.map",
+    "787.2e9b76fa.chunk.js.map": "/PortFolio/static/js/787.2e9b76fa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e9fb1a6.css",
+    "static/js/main.137bdd3e.js"
+  ]
+}
