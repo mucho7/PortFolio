@@ -9,10 +9,8 @@ function Projects() {
       <TitleSection>
         <TitleTypo>PROJECTS</TitleTypo>
       </TitleSection>
-      <SkillContainer>
-        <HelloWorld />
-        <Coco />
-      </SkillContainer>
+      <HelloWorld />
+      <Coco />
     </ProjectSection>
   );
 }
@@ -56,7 +54,5 @@ const TitleTypo = styled.div`
   border-bottom-color: #cccccc;
   line-height: 1.5;
 `;
-
-const SkillContainer = styled.div``;
 
 export default Projects;

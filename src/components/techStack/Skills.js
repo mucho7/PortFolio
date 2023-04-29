@@ -99,7 +99,7 @@ const SkillNameTypo = styled(TitleTypo)`
 `;
 
 const SkillImg = styled.img`
-  width: 15rem;
+  max-width: 15rem;
 `;
 
 export default Skills;
