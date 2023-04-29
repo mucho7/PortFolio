@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
-import { Icon } from "@mui/material";
+import { Grid, Icon } from "@mui/material";
 
 function AboutMe(params) {
   const { infos } = params;
@@ -9,20 +9,22 @@ function AboutMe(params) {
       <TitleSection>
         <TitleTypo>ABOUT ME</TitleTypo>
       </TitleSection>
-      <AboutMeItemsBox>
+      <Grid container>
         {infos.map((info, index) => {
           const { name, value, icon } = info;
           return (
-            <AboutMeContentItem key={index}>
-              <StyledIcon fontSize="large" component={icon} />
-              <div>
-                <SmallTypo>{name}</SmallTypo>
-                <SmallTypo>{value}</SmallTypo>
-              </div>
-            </AboutMeContentItem>
+            <Grid item xs={12} lg={4} key={index}>
+              <AboutMeContentItem>
+                <StyledIcon fontSize='large' component={icon} />
+                <div>
+                  <SmallTypo>{name}</SmallTypo>
+                  <SmallTypo>{value}</SmallTypo>
+                </div>
+              </AboutMeContentItem>
+            </Grid>
           );
         })}
-      </AboutMeItemsBox>
+      </Grid>
     </AboutMeContent>
   );
 }
@@ -76,7 +78,6 @@ const AboutMeContentItem = styled.div`
   flex-direction: row;
   margin-bottom: 2rem;
   padding-left: 2rem;
-  width: calc(100% / 3 - 2rem);
 `;
 
 const StyledIcon = styled(Icon)`

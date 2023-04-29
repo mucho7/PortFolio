@@ -27,12 +27,16 @@ function HeaderNavbar() {
     <StyledHeader scrolled={scrolled}>
       <NavContainer>
         <MyNameBox>김민찬 Portfolio</MyNameBox>
-        <NavItemContainer>
-          {navOptions.map((option, index) => {
-            const { name } = option;
-            return <div key={index}>{name}</div>;
-          })}
-        </NavItemContainer>
+        {window.innerWidth < 900 ? (
+          <div />
+        ) : (
+          <NavItemContainer>
+            {navOptions.map((option, index) => {
+              const { name } = option;
+              return <div key={index}>{name}</div>;
+            })}
+          </NavItemContainer>
+        )}
       </NavContainer>
     </StyledHeader>
   );

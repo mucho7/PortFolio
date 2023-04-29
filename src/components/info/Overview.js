@@ -11,7 +11,7 @@ function Overview(params) {
       </LargerTypo>
       <StyledHr />
       <SmallTypo>안녕하세요.</SmallTypo>
-      <SmallTypo>열심히 배워나가고 있는 프론트엔드 웹 개발자입니다.</SmallTypo>
+      <SmallTypo>열심히 배우는 프론트엔드 웹 개발자입니다.</SmallTypo>
     </ShortPR>
   );
 }
