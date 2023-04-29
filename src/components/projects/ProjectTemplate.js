@@ -20,7 +20,7 @@ function ProjectDetail(params) {
 function ProjectDescript(params) {
   const { descript } = params;
   return (
-    <div>
+    <>
       {descript.map((item, index) => {
         return (
           <RowFlexBox key={index}>
@@ -28,7 +28,7 @@ function ProjectDescript(params) {
               style={{
                 textAlign: "start",
                 fontSize: 24,
-                width: "30%",
+                width: "100%",
               }}
             >
               {item.name}
@@ -39,7 +39,7 @@ function ProjectDescript(params) {
                 textAlign: "start",
                 fontSize: 16,
                 fontWeight: 200,
-                width: "70%",
+                width: "100%",
               }}
             >
               {item.content}
@@ -47,7 +47,7 @@ function ProjectDescript(params) {
           </RowFlexBox>
         );
       })}
-    </div>
+    </>
   );
 }
 
@@ -57,7 +57,7 @@ function ProjectContent(params) {
     <TemplateBox>
       <TitleTypo>{title}</TitleTypo>
       <InfoTypo>{info}</InfoTypo>
-      <Grid container>
+      <Grid container style={{ alignItems: "center" }}>
         <ProjectCarousel images={images} />
         <Grid item xs={12} lg={6}>
           <ColFlexBox>
@@ -79,6 +79,8 @@ const TemplateBox = styled.div`
 `;
 
 const MarkdownWrapper = styled.div`
+  width: 100%;
+  max-width: 800px;
   font-family: sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -130,11 +132,25 @@ const RowFlexBox = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  width: 100%;
+
+  & > *:first-child {
+    flex-basis: 30%;
+  }
+
+  & > *:last-child {
+    flex-basis: 70%;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    & > *:first-child,
+    & > *:last-child {
+      flex-basis: 100%;
+    }
   }
 `;
 
@@ -143,7 +159,6 @@ const ColFlexBox = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
 
-  margin-left: 1rem;
   width: 100%;
 `;
 

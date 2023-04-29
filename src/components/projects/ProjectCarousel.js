@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Slider from "react-slick";
 
 import styled from "styled-components";
-import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+// import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Grid } from "@mui/material";
@@ -39,22 +39,15 @@ function ProjectCarousel(params) {
   };
 
   return (
-    <StyledGrid item xs={12} lg={6}>
+    <Grid item xs={12} lg={6}>
       <StyledSlider ref={sliderRef} {...settings}>
         {images.map((image, index) => {
           return <Image src={image} alt={index} key={index} />;
         })}
       </StyledSlider>
-      {/* <PrevArrow />
-      <NextArrow /> */}
-    </StyledGrid>
+    </Grid>
   );
 }
-
-const StyledGrid = styled(Grid)({
-  display: "flex",
-  alignItems: "center",
-});
 
 const StyledSlider = styled(Slider)({
   maxWidth: "100%",

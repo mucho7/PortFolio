@@ -13,7 +13,7 @@ function AboutMe(params) {
         {infos.map((info, index) => {
           const { name, value, icon } = info;
           return (
-            <Grid item xs={12} lg={4} key={index}>
+            <Grid item xs={12} md={4} key={index}>
               <AboutMeContentItem>
                 <StyledIcon fontSize='large' component={icon} />
                 <div>
@@ -66,18 +66,18 @@ const TitleTypo = styled.div`
   line-height: 1.5;
 `;
 
-const AboutMeItemsBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
+// const AboutMeItemsBox = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+// `;
 
 const AboutMeContentItem = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 2rem;
-  padding-left: 2rem;
+  padding-left: calc(50% - 6rem);
 `;
 
 const StyledIcon = styled(Icon)`

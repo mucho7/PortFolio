@@ -1,8 +1,18 @@
+import { useState, useEffect } from "react";
+
 import styled from "styled-components";
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import { front, back, commnu, versionControl } from "../../assets/images";
 
 function Skills() {
+  const [innerSize, setInnerSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setInnerSize(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const skillOptions = [
     { name: "Frontend", src: front },
     { name: "Backend", src: back },
@@ -11,7 +21,7 @@ function Skills() {
   ];
 
   return (
-    <SkillSection>
+    <SkillSection innerSize={innerSize}>
       <TitleSection>
         <TitleTypo>SKILLS</TitleTypo>
       </TitleSection>
@@ -30,12 +40,19 @@ function Skills() {
   );
 }
 
+// 45 65 auto
+
 const SkillSection = styled.div`
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 0rem 2rem;
   margin: 0 auto;
   background: #f9c51d;
 
-  height: 50rem;
+  height: ${(props) =>
+    props.innerSize >= 900
+      ? "45rem"
+      : props.innerSize >= 600
+      ? "65rem"
+      : "auto"};
 `;
 
 const TitleSection = styled.div`

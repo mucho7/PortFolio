@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 function HeaderNavbar() {
-  const [scrolled, setScrolled] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
+  const [innerSize, setInnerSize] = useState(0);
   const navOptions = [
     { name: "About me" },
     { name: "Tech Stacks" },
@@ -16,10 +17,16 @@ function HeaderNavbar() {
       setScrolled(window.pageYOffset > 0);
     };
 
+    const handleResize = () => {
+      setInnerSize(window.innerWidth);
+    };
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -27,8 +34,8 @@ function HeaderNavbar() {
     <StyledHeader scrolled={scrolled}>
       <NavContainer>
         <MyNameBox>김민찬 Portfolio</MyNameBox>
-        {window.innerWidth < 900 ? (
-          <div />
+        {innerSize < 900 ? (
+          <></>
         ) : (
           <NavItemContainer>
             {navOptions.map((option, index) => {
