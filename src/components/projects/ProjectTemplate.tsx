@@ -1,24 +1,37 @@
-import React from "react";
+import { marked } from "marked";
 
 import ProjectCarousel from "./ProjectCarousel";
+import BlackHanSans from "assets/fonts/BlackHanSans-Regular.ttf";
+import GitButton from "./GitButton";
 
 import styled from "styled-components";
-import { marked } from "marked";
-import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import { Grid } from "@mui/material";
 
-function ProjectDetail(params) {
-  const { content } = params;
-
-  const Markdown = ({ content }) => {
-    const html = marked(content);
-    return <MarkdownWrapper dangerouslySetInnerHTML={{ __html: html }} />;
+interface ProjectTemplateProps {
+  data: {
+    title: string;
+    info: string;
+    content: string;
+    descript: Descript[];
+    images: string[];
+    url: string;
   };
-  return <Markdown content={content} />;
 }
 
-function ProjectDescript(params) {
-  const { descript } = params;
+interface Descript {
+  name: string;
+  content: string;
+}
+
+function ProjectDetail(params: { content: string }) {
+  const { content } = params;
+  return (
+    <MarkdownWrapper dangerouslySetInnerHTML={{ __html: marked(content) }} />
+  );
+}
+
+function ProjectDescript(params: { descript: Descript[]; url: string }) {
+  const { descript, url } = params;
   return (
     <>
       {descript.map((item, index) => {
@@ -47,12 +60,24 @@ function ProjectDescript(params) {
           </RowFlexBox>
         );
       })}
+      <RowFlexBox>
+        <TitleTypo
+          style={{
+            textAlign: "start",
+            fontSize: 24,
+            width: "100%",
+          }}
+        >
+          Github
+        </TitleTypo>
+        <GitButton url={url} />
+      </RowFlexBox>
     </>
   );
 }
 
-function ProjectTemplate(params) {
-  const { title, info, content, descript, images } = params.data;
+function ProjectTemplate(params: ProjectTemplateProps) {
+  const { title, info, content, descript, images, url } = params.data;
   return (
     <TemplateBox>
       <TitleTypo>{title}</TitleTypo>
@@ -63,7 +88,7 @@ function ProjectTemplate(params) {
           <ColFlexBox>
             <ProjectDetail content={content} />
             <HrLine />
-            <ProjectDescript descript={descript} />
+            <ProjectDescript descript={descript} url={url} />
           </ColFlexBox>
         </Grid>
       </Grid>

@@ -49,7 +49,7 @@ function HeaderNavbar() {
   );
 }
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.header<{ scrolled: boolean }>`
   position: fixed;
   top: 0;
 

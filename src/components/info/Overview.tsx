@@ -2,7 +2,7 @@ import styled from "styled-components";
 import DeskSetUp from "../../assets/images/deskSetUp.jpg";
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 
-function Overview(params) {
+function Overview() {
   return (
     <ShortPR>
       <HandmadeFilter />

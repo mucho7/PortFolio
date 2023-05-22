@@ -2,6 +2,7 @@ import front from "./front.png";
 import back from "./back.png";
 import commnu from "./commnu.png";
 import versionControl from "./versionControl.png";
+import githubButton from "./github-icon.png";
 
 import coco1 from "./coco/coco (1).png";
 import coco2 from "./coco/coco (2).png";
@@ -23,6 +24,7 @@ export {
   back,
   commnu,
   versionControl,
+  githubButton,
   coco1,
   coco2,
   coco3,

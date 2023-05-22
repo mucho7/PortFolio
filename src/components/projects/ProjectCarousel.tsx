@@ -1,33 +1,14 @@
 import { useRef } from "react";
 import Slider from "react-slick";
 
-import styled from "styled-components";
-// import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import styled from "styled-components";
 import { Grid } from "@mui/material";
 
-function ProjectCarousel(params) {
+function ProjectCarousel(params: { images: string[] }) {
   const { images } = params;
-  const sliderRef = useRef();
-
-  //   const PrevArrow = () => {
-  //     const prev = () => {
-  //       if (sliderRef.current) {
-  //         sliderRef.current.slickPrev();
-  //       }
-  //     };
-  //     return <ArrowBackIos style={styleForArr} onClick={prev} />;
-  //   };
-
-  //   const NextArrow = () => {
-  //     const next = () => {
-  //       if (sliderRef.current) {
-  //         sliderRef.current.slickNext();
-  //       }
-  //     };
-  //     return <ArrowForwardIos onClick={next} />;
-  //   };
+  const sliderRef = useRef(null);
 
   const settings = {
     infinite: true,
@@ -42,7 +23,7 @@ function ProjectCarousel(params) {
     <Grid item xs={12} lg={6}>
       <StyledSlider ref={sliderRef} {...settings}>
         {images.map((image, index) => {
-          return <Image src={image} alt={index} key={index} />;
+          return <Image src={image} alt={"카루젤 그림"} key={index} />;
         })}
       </StyledSlider>
     </Grid>
