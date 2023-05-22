@@ -1,8 +1,20 @@
 import styled from "styled-components";
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
-import { Grid, Icon } from "@mui/material";
+import { Grid, Icon, SvgIconTypeMap } from "@mui/material";
+import { OverridableComponent } from "@mui/material/OverridableComponent";
 
-function AboutMe(params) {
+type AboutMeProps = {
+  infos: {
+    name: string;
+    value: string;
+    // icon: string;
+    icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
+      muiName: string;
+    };
+  }[];
+};
+
+function AboutMe(params: AboutMeProps) {
   const { infos } = params;
   return (
     <AboutMeContent>
@@ -66,13 +78,6 @@ const TitleTypo = styled.div`
   line-height: 1.5;
 `;
 
-// const AboutMeItemsBox = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   justify-content: space-between;
-// `;
-
 const AboutMeContentItem = styled.div`
   display: flex;
   flex-direction: row;
@@ -80,13 +85,13 @@ const AboutMeContentItem = styled.div`
   padding-left: calc(50% - 6rem);
 `;
 
-const StyledIcon = styled(Icon)`
-  width: 2rem;
-  min-width: 2rem;
-  height: 2rem;
-  margin-top: 0.2rem;
-  margin-right: 2rem;
-`;
+const StyledIcon = styled(Icon)({
+  width: "2rem",
+  minWidth: "2rem",
+  height: "2rem",
+  marginTop: "0.2rem",
+  marginRight: "2rem",
+}) as typeof Icon;
 
 const SmallTypo = styled.div`
   ${StyleForTypo}
