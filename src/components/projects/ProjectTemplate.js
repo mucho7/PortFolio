@@ -51,7 +51,7 @@ function ProjectDescript(params) {
   );
 }
 
-function ProjectContent(params) {
+function ProjectTemplate(params) {
   const { title, info, content, descript, images } = params.data;
   return (
     <TemplateBox>
@@ -169,4 +169,4 @@ const HrLine = styled.hr`
   margin: 1rem 0;
 `;
 
-export { ProjectContent };
+export default ProjectTemplate;

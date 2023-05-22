@@ -1,4 +1,4 @@
-import { ProjectContent } from "./ProjectTemplate";
+import ProjectTemplate from "./ProjectTemplate";
 import { coco1, coco2, coco3, coco4 } from "../../assets/images";
 
 function Coco() {
@@ -33,7 +33,7 @@ function Coco() {
     images: [coco1, coco2, coco3, coco4],
   };
 
-  return <ProjectContent data={data} />;
+  return <ProjectTemplate data={data} />;
 }
 
 export default Coco;

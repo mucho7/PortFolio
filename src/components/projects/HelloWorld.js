@@ -1,4 +1,4 @@
-import { ProjectContent } from "./ProjectTemplate";
+import ProjectTemplate from "./ProjectTemplate";
 import {
   helloWorld1,
   helloWorld2,
@@ -57,7 +57,7 @@ function HelloWorld() {
     ],
   };
 
-  return <ProjectContent data={data} />;
+  return <ProjectTemplate data={data} />;
 }
 
 export default HelloWorld;
