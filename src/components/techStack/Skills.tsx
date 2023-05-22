@@ -25,7 +25,7 @@ function Skills() {
       <TitleSection>
         <TitleTypo>SKILLS</TitleTypo>
       </TitleSection>
-      <SkillContainer>
+      <SkillContainer innerSize={innerSize}>
         {skillOptions.map((item, index) => {
           const { name, src } = item;
           return (
@@ -87,7 +87,8 @@ const TitleTypo = styled.div`
   line-height: 1.5;
 `;
 
-const SkillContainer = styled.div`
+const SkillContainer = styled.div<{ innerSize: number }>`
+  padding: ${(props) => (props.innerSize > 900 ? "0 20%" : "0")};
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
