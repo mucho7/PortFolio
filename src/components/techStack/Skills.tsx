@@ -1,17 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import styled from "styled-components";
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import { front, back, commnu, versionControl } from "../../assets/images";
+import { useDispatch } from "react-redux";
+import { changeRef } from "store/containerRefSlice";
 
 function Skills() {
+  const dispatch = useDispatch();
+  const skillRef = useRef<HTMLDivElement>(null);
   const [innerSize, setInnerSize] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setInnerSize(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const skillOptions = [
     { name: "Frontend", src: front },
@@ -20,8 +18,19 @@ function Skills() {
     { name: "Version Control", src: versionControl },
   ];
 
+  useEffect(() => {
+    const handleResize = () => setInnerSize(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const targetRef = skillRef.current ? skillRef.current.offsetTop : 0;
+    dispatch(changeRef({ target: "skillRef", value: targetRef }));
+  }, [skillRef, dispatch]);
+
   return (
-    <SkillSection innerSize={innerSize}>
+    <SkillSection innerSize={innerSize} ref={skillRef}>
       <TitleSection>
         <TitleTypo>SKILLS</TitleTypo>
       </TitleSection>
@@ -49,9 +58,9 @@ const SkillSection = styled.div<{ innerSize: number }>`
 
   height: ${(props) =>
     props.innerSize >= 900
-      ? "45rem"
+      ? "60rem"
       : props.innerSize >= 600
-      ? "65rem"
+      ? "70rem"
       : "auto"};
 `;
 
@@ -88,7 +97,7 @@ const TitleTypo = styled.div`
 `;
 
 const SkillContainer = styled.div<{ innerSize: number }>`
-  padding: ${(props) => (props.innerSize > 900 ? "0 20%" : "0")};
+  padding: ${(props) => (props.innerSize > 1200 ? "0 15%" : "0")};
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

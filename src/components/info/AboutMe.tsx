@@ -1,7 +1,11 @@
+import { useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
+
 import styled from "styled-components";
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import { Grid, Icon, SvgIconTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { changeRef } from "store/containerRefSlice";
 
 type AboutMeProps = {
   infos: {
@@ -16,8 +20,16 @@ type AboutMeProps = {
 
 function AboutMe(params: AboutMeProps) {
   const { infos } = params;
+  const dispatch = useDispatch();
+  const infoRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const targetRef = infoRef.current ? infoRef.current.offsetTop : 0;
+    dispatch(changeRef({ target: "infoRef", value: targetRef }));
+  }, [infoRef, dispatch]);
+
   return (
-    <AboutMeContent>
+    <AboutMeContent ref={infoRef}>
       <TitleSection>
         <TitleTypo>ABOUT ME</TitleTypo>
       </TitleSection>

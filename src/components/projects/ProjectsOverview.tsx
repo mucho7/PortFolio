@@ -1,11 +1,23 @@
+import { useRef, useEffect } from "react";
+import { useDispatch } from "react-redux/";
+
+import { changeRef } from "store/containerRefSlice";
+
 import styled from "styled-components";
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import Coco from "./Coco";
 import HelloWorld from "./HelloWorld";
 
 function Projects() {
+  const dispatch = useDispatch();
+  const projectRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const targetRef = projectRef.current ? projectRef.current.offsetTop : 0;
+    dispatch(changeRef({ target: "projectRef", value: targetRef }));
+  }, [projectRef, dispatch]);
   return (
-    <ProjectSection>
+    <ProjectSection ref={projectRef}>
       <TitleSection>
         <TitleTypo>PROJECTS</TitleTypo>
       </TitleSection>

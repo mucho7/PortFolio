@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { toTargetRef } from "store/containerRefSlice";
+
 import styled from "styled-components";
 
+type TargetType = "infoRef" | "skillRef" | "archiveRef" | "projectRef";
+
 function HeaderNavbar() {
+  const dispatch = useDispatch();
   const [scrolled, setScrolled] = useState(false);
   const [innerSize, setInnerSize] = useState(0);
-  const navOptions = [
-    { name: "About me" },
-    { name: "Tech Stacks" },
-    // { name: "Github" },
-    { name: "Projects" },
-    { name: "Career" },
+  const navOptions: { name: string; target: TargetType }[] = [
+    { name: "About me", target: "infoRef" },
+    { name: "Tech Stacks", target: "skillRef" },
+    { name: "Archiving", target: "archiveRef" },
+    { name: "Projects", target: "projectRef" },
+    // { name: "Career" },
   ];
 
   useEffect(() => {
@@ -21,6 +27,9 @@ function HeaderNavbar() {
       setInnerSize(window.innerWidth);
     };
 
+    handleResize();
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
 
@@ -30,17 +39,26 @@ function HeaderNavbar() {
     };
   }, []);
 
+  const onClickHandler = (target: TargetType) => {
+    dispatch(toTargetRef(target));
+  };
+
   return (
     <StyledHeader scrolled={scrolled}>
       <NavContainer>
         <MyNameBox>김민찬 Portfolio</MyNameBox>
-        {innerSize < 900 ? (
+        {innerSize < 1000 ? (
+          // 햄버거 버튼 추가 요망
           <></>
         ) : (
           <NavItemContainer>
             {navOptions.map((option, index) => {
-              const { name } = option;
-              return <div key={index}>{name}</div>;
+              const { name, target } = option;
+              return (
+                <NavOption onClick={() => onClickHandler(target)} key={index}>
+                  {name}
+                </NavOption>
+              );
             })}
           </NavItemContainer>
         )}
@@ -85,6 +103,15 @@ const MyNameBox = styled.div`
   display: inline-block;
   font-weight: 700;
   font-size: 1.5rem;
+`;
+
+const NavOption = styled.div`
+  cursor: pointer;
+  padding: 0.5rem;
+  &: hover {
+    color: white;
+    background: gray;
+  }
 `;
 
 export default HeaderNavbar;

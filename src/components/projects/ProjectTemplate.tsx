@@ -70,7 +70,9 @@ function ProjectDescript(params: { descript: Descript[]; url: string }) {
         >
           Github
         </TitleTypo>
-        <GitButton url={url} />
+        <div>
+          <GitButton url={url} />
+        </div>
       </RowFlexBox>
     </>
   );
