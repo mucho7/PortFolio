@@ -16,6 +16,7 @@ function Projects() {
     const targetRef = projectRef.current ? projectRef.current.offsetTop : 0;
     dispatch(changeRef({ target: "projectRef", value: targetRef }));
   }, [projectRef, dispatch]);
+
   return (
     <ProjectSection ref={projectRef}>
       <TitleSection>

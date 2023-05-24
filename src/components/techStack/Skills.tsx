@@ -49,8 +49,6 @@ function Skills() {
   );
 }
 
-// 45 65 auto
-
 const SkillSection = styled.div<{ innerSize: number }>`
   padding: 4rem 2rem 0rem 2rem;
   margin: 0 auto;

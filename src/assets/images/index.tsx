@@ -3,6 +3,8 @@ import back from "./back.png";
 import commnu from "./commnu.png";
 import versionControl from "./versionControl.png";
 import githubButton from "./github-icon.png";
+import github from "./git-hub.png";
+import velog from "./velog.png";
 
 import coco1 from "./coco/coco (1).png";
 import coco2 from "./coco/coco (2).png";
@@ -25,6 +27,8 @@ export {
   commnu,
   versionControl,
   githubButton,
+  github,
+  velog,
   coco1,
   coco2,
   coco3,

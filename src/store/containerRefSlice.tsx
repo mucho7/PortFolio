@@ -25,8 +25,7 @@ const refSlice = createSlice({
         "infoRef" | "skillRef" | "archiveRef" | "projectRef"
       >
     ) => {
-      console.log(action);
-      window.scrollTo(0, state[action.payload]);
+      window.scrollTo({ top: state[action.payload], behavior: "smooth" });
     },
   },
 });
