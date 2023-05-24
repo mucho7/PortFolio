@@ -11,7 +11,8 @@ type ArchiveBoxProps = {
 };
 
 function ArchiveBox(props: ArchiveBoxProps) {
-  const { name, src, url, overview, detail } = props.info;
+  // const { name, src, url, overview, detail } = props.info;
+  console.log(props);
 
   return (
     <ArchiveWrapper>

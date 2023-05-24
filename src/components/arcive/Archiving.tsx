@@ -6,7 +6,6 @@ import ArchiveBox from "./ArchiveBox";
 
 import styled from "styled-components";
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
-import { GitHub } from "@mui/icons-material";
 
 function Archiving() {
   const dispatch = useDispatch();
@@ -20,7 +19,7 @@ function Archiving() {
   useEffect(() => {
     const targetRef = archiveRef.current ? archiveRef.current.offsetTop : 0;
     dispatch(changeRef({ target: "archiveRef", value: targetRef }));
-  }, []);
+  }, [dispatch]);
 
   return (
     <ArchiveSection ref={archiveRef}>

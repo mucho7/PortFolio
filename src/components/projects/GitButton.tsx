@@ -28,6 +28,8 @@ const ButtonWrapper = styled.div({
   padding: "0.5rem",
   borderRadius: "7px",
 
+  cursor: "pointer",
+
   "&: hover": {
     background: "rgba(0, 0, 0, 0.2)",
   },
