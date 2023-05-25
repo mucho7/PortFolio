@@ -27,7 +27,7 @@ function PortFolio() {
     images: [portfolio1],
   };
 
-  return <ProjectTemplate data={data} />;
+  // return <ProjectTemplate data={data} />;
 }
 
 export default PortFolio;

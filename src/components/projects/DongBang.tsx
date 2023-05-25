@@ -10,7 +10,6 @@ import {
   dongbang9,
   dongbang10,
   dongbang11,
-  dongbang12,
 } from "assets/images";
 
 function DongBang() {
@@ -53,11 +52,10 @@ function DongBang() {
       dongbang9,
       dongbang10,
       dongbang11,
-      dongbang12,
     ],
   };
 
-  return <ProjectTemplate data={data} />;
+  // return <ProjectTemplate data={data} />;
 }
 
 export default DongBang;

@@ -1,19 +1,16 @@
 import styled from "styled-components";
-import BlackHanSans from "assets/fonts/BlackHanSans-Regular.ttf";
 
 function ProjectMainFunc(params: { mainFunc: string[] }) {
   const { mainFunc } = params;
   return (
-    <>
-      <RowFlexBox>
-        <TitleTypo>주요 기능</TitleTypo>
-        <div>
-          {mainFunc.map((item, index) => {
-            return <SmallTypo key={index}>{item}</SmallTypo>;
-          })}
-        </div>
-      </RowFlexBox>
-    </>
+    <RowFlexBox>
+      <TitleTypo>주요 기능</TitleTypo>
+      <div>
+        {mainFunc.map((item, index) => {
+          return <SmallTypo key={index}>{item}</SmallTypo>;
+        })}
+      </div>
+    </RowFlexBox>
   );
 }
 

@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux/";
 import { changeRef } from "store/containerRefSlice";
 
 import styled from "styled-components";
-import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import Coco from "./Coco";
 import HelloWorld from "./HelloWorld";
 import DongBang from "./DongBang";
@@ -24,9 +23,9 @@ function Projects() {
       <TitleSection>
         <TitleTypo>PROJECTS</TitleTypo>
       </TitleSection>
-      <DongBang />
+      {/* <DongBang />
       <PortFolio />
-      <HelloWorld />
+      <HelloWorld /> */}
       <Coco />
     </ProjectSection>
   );
@@ -47,16 +46,10 @@ const TitleSection = styled.div`
 `;
 
 const StyleForTypo = `
-      position: relative;
-      font-weight: 400;
-    
-      z-index: 1;
-    
-      @font-face {
-        font-family: 'BlackHanSans';
-        src: url(${BlackHanSans})
-    }
-    `;
+  position: relative;
+  font-weight: 400;
+  font-family: 'BlackHanSans';
+`;
 
 const TitleTypo = styled.div`
   ${StyleForTypo}

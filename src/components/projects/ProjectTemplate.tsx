@@ -1,12 +1,24 @@
 import { marked } from "marked";
 
-import ProjectCarousel from "./ProjectCarousel";
-import BlackHanSans from "assets/fonts/BlackHanSans-Regular.ttf";
 import GitButton from "./GitButton";
+import ProjectCarousel from "./ProjectCarousel";
+import ProjectMainFunc from "./ProjectMainFunc";
 
 import styled from "styled-components";
 import { Grid } from "@mui/material";
-import ProjectMainFunc from "./ProjectMainFunc";
+import ProjectStacks from "./ProjectStacks";
+import { firebase, spring, typescript } from "assets/images/techStack";
+
+type SingleTechStack = {
+  name: string;
+  src: string;
+  isMine: boolean;
+};
+
+type TechStackList = {
+  title: string;
+  contents: SingleTechStack[];
+};
 
 interface ProjectTemplateProps {
   data: {
@@ -14,15 +26,10 @@ interface ProjectTemplateProps {
     info: string;
     content: string;
     mainFunc: string[];
-    descript: Descript[];
+    techStack: TechStackList[];
     images: string[];
     url: string;
   };
-}
-
-interface Descript {
-  name: string;
-  content: string;
 }
 
 function ProjectDetail(params: { content: string }) {
@@ -32,56 +39,10 @@ function ProjectDetail(params: { content: string }) {
   );
 }
 
-function ProjectDescript(params: { descript: Descript[]; url: string }) {
-  const { descript, url } = params;
-  return (
-    <>
-      {descript.map((item, index) => {
-        return (
-          <RowFlexBox key={index}>
-            <TitleTypo
-              style={{
-                textAlign: "start",
-                fontSize: 24,
-                width: "100%",
-              }}
-            >
-              {item.name}
-            </TitleTypo>
-            <SmallTypo
-              style={{
-                alignSelf: "normal",
-                textAlign: "start",
-                fontSize: 16,
-                fontWeight: 200,
-                width: "100%",
-              }}
-            >
-              {item.content}
-            </SmallTypo>
-          </RowFlexBox>
-        );
-      })}
-      <RowFlexBox>
-        <TitleTypo
-          style={{
-            textAlign: "start",
-            fontSize: 24,
-            width: "100%",
-          }}
-        >
-          Github
-        </TitleTypo>
-        <div>
-          <GitButton url={url} />
-        </div>
-      </RowFlexBox>
-    </>
-  );
-}
-
 function ProjectTemplate(params: ProjectTemplateProps) {
-  const { title, info, content, descript, images, url, mainFunc } = params.data;
+  const { title, info, content, techStack, images, url, mainFunc } =
+    params.data;
+
   return (
     <TemplateBox>
       <TitleTypo>{title}</TitleTypo>
@@ -94,7 +55,11 @@ function ProjectTemplate(params: ProjectTemplateProps) {
             <ProjectDetail content={content} />
             <HrLine />
             <ProjectMainFunc mainFunc={mainFunc ? mainFunc : [""]} />
-            <ProjectDescript descript={descript} url={url} />
+            {techStack.map((item) => {
+              const { title, contents } = item;
+              return <ProjectStacks title={title} contents={contents} />;
+            })}
+            <GitButton url={url} />
           </ColFlexBox>
         </Grid>
       </Grid>
@@ -121,12 +86,8 @@ const styleForTypo = `
   position: relative;
   font-weight: 400;
 
+  font-family: 'BlackHanSans';
   z-index: 1;
-
-  @font-face {
-    font-family: 'BlackHanSans';
-    src: url(${BlackHanSans})
-}
 `;
 
 const TitleTypo = styled.div`
@@ -146,43 +107,6 @@ const InfoTypo = styled.div`
   color: #6c757d;
   text-align: center;
   opacity: 0.8;
-`;
-
-const SmallTypo = styled.div`
-  ${styleForTypo}
-  font-size: 1.2rem;
-  font-weight: 800;
-  font-family: "Noto Sans KR", sans-serif;
-  white-space: pre-wrap;
-
-  color: #212529;
-`;
-
-const RowFlexBox = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  width: 100%;
-
-  & > *:first-child {
-    flex-basis: 30%;
-  }
-
-  & > *:last-child {
-    flex-basis: 70%;
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    & > *:first-child,
-    & > *:last-child {
-      flex-basis: 100%;
-    }
-  }
 `;
 
 const ColFlexBox = styled.div`
