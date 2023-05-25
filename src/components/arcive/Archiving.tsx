@@ -6,14 +6,35 @@ import ArchiveBox from "./ArchiveBox";
 
 import styled from "styled-components";
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
+import { githubButton, velog } from "assets/images";
 
 function Archiving() {
   const dispatch = useDispatch();
   const archiveRef = useRef<HTMLDivElement>(null);
 
   const archiveInfos = [
-    { name: "GitHub", src: "", url: "", overview: "", detail: [] },
-    { name: "velog", src: "", url: "", overview: "", detail: [] },
+    {
+      name: "GitHub",
+      src: githubButton,
+      url: "https://github.com/mucho7",
+      overview: "소스 코드 저장소입니다.",
+      detail: [
+        "알고리즘을 풀었던 코드",
+        "과거 프로젝트, 토이 프로젝트의 코드",
+        "SSAFY 내부에서 진행했던 프로젝트의 코드",
+      ],
+    },
+    {
+      name: "velog",
+      src: velog,
+      url: "https://velog.io/@kimjih94",
+      overview: "공부 및 지식 공유 목적의 블로그입니다.",
+      detail: [
+        "스스로 공부하며 깨달은 것을 정리하고 기록",
+        "웹 개발자가 되기 위해 공부한 지식 정리",
+        "겪었던 문제를 공유하여 동료와 함께 발전",
+      ],
+    },
   ];
 
   useEffect(() => {
@@ -24,7 +45,7 @@ function Archiving() {
   return (
     <ArchiveSection ref={archiveRef}>
       <TitleSection>
-        <TitleTypo>Archiving</TitleTypo>
+        <TitleTypo>ARCHIVING</TitleTypo>
       </TitleSection>
       <RowFlex>
         {archiveInfos.map((info, index) => {
