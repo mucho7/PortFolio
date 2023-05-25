@@ -33,6 +33,7 @@ function ProjectStacks(props: ProjectStacksProps) {
                 transform:
                   isMine && isTarget ? "translate3d(0px, -20px, 0)" : "",
                 background: isMine && isTarget ? "rgba(29, 128, 159, 0.2)" : "",
+                borderRadius: isMine ? "50%" : "",
               }}
             />
           );

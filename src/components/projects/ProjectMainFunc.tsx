@@ -21,7 +21,7 @@ function ProjectMainFunc(params: MainFuncProps) {
   return (
     <RowFlexBox>
       <TitleTypo>주요 기능</TitleTypo>
-      <div>
+      <ul>
         {mainFunc.map((item, index) => {
           const { content, isMine } = item;
           return (
@@ -37,7 +37,7 @@ function ProjectMainFunc(params: MainFuncProps) {
             </SmallTypo>
           );
         })}
-      </div>
+      </ul>
     </RowFlexBox>
   );
 }

@@ -54,7 +54,7 @@ function DongBang() {
           { name: "Typescript", src: typescript, isMine: true },
           { name: "React", src: reactjs, isMine: true },
           { name: "styled-components", src: styledcomponents, isMine: true },
-          { name: "TensorFlow", src: tensorflow, isMine: false },
+          { name: "TensorFlow", src: tensorflow, isMine: true },
         ],
       },
       {
@@ -70,7 +70,7 @@ function DongBang() {
         contents: [
           { name: "Spring", src: spring, isMine: false },
           { name: "Spring Boot", src: springboot, isMine: false },
-          { name: "Kurento", src: kurento, isMine: false },
+          { name: "Kurento", src: kurento, isMine: true },
         ],
       },
       {
@@ -86,17 +86,6 @@ function DongBang() {
           { name: "MongoDB", src: mongodb, isMine: false },
         ],
       },
-
-      // {
-      //   name: "Backend",
-      //   content:
-      //     "Spring, Spring Boot, JPA, Kurento, FastAPI, SQLAlchemy, Spring Data Mongo, Spring Security",
-      // },
-      // {
-      //   name: "Infra",
-      //   content:
-      //     "AWS EC2, AWS S3, Jenkins, Firebase, NginX, Docker, kafka, MySQL, MongoDB",
-      // },
     ],
     images: [
       dongbang4,

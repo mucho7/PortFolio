@@ -1,25 +1,25 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type RefType = {
-  target: number;
-};
-
 const initialState = {
-  target: -1,
+  target: 0,
+  persistTarget: 0,
 };
 
 const hoverSlice = createSlice({
-  name: "refSlice",
+  name: "hoverSlice",
   initialState,
   reducers: {
     setTarget: (state, action: PayloadAction<number>) => {
       state.target = action.payload;
     },
+    setPersistTarget: (state, action: PayloadAction<number>) => {
+      state.persistTarget = action.payload;
+    },
     clearTarget: (state) => {
-      state.target = -1;
+      state.target = 0;
     },
   },
 });
 
-export const { setTarget, clearTarget } = hoverSlice.actions;
+export const { setTarget, setPersistTarget, clearTarget } = hoverSlice.actions;
 export default hoverSlice.reducer;

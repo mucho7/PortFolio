@@ -11,14 +11,13 @@ type ProjectParticipateProps = {
 
 function ProjectParticipate(props: ProjectParticipateProps) {
   const dispatch = useDispatch();
-  //   const { participation } = props;
+  const { targetNum } = props;
   const participation = "dkdkdkkdk";
-  const target = 1;
 
   const handleMouseHover = (event: "enter" | "exit") => {
     switch (event) {
       case "enter":
-        dispatch(setTarget(target));
+        dispatch(setTarget(targetNum));
         break;
       case "exit":
         dispatch(clearTarget());

@@ -39,7 +39,7 @@ function Skills() {
           return (
             <SkillItemBox key={index}>
               <SkillNameTypo>{name}</SkillNameTypo>
-              <SkillImg src={src} />
+              <SkillImg src={src} alt={"기술스택"} />
             </SkillItemBox>
           );
         })}
