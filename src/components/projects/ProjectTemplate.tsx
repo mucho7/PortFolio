@@ -3,11 +3,11 @@ import { marked } from "marked";
 import GitButton from "./GitButton";
 import ProjectCarousel from "./ProjectCarousel";
 import ProjectMainFunc from "./ProjectMainFunc";
+import ProjectStacks from "./ProjectStacks";
+import ProjectParticipate from "./ProjectParticipate";
 
 import styled from "styled-components";
 import { Grid } from "@mui/material";
-import ProjectStacks from "./ProjectStacks";
-import ProjectParticipate from "./ProjectParticipate";
 
 type SingleTechStack = {
   name: string;
@@ -46,7 +46,7 @@ function ProjectTemplate(params: ProjectTemplateProps) {
         <Grid item xs={12} xl={6}>
           <ColFlexBox>
             <HrLine />
-            <ProjectParticipate />
+            <ProjectParticipate participation={""} />
             <HrLine />
             <ProjectDetail
               dangerouslySetInnerHTML={{ __html: marked(content) }}
@@ -77,8 +77,8 @@ const TemplateBox = styled.div`
 const ProjectDetail = styled.div`
   width: 100%;
   max-width: 1200px;
-  font-family: noto-sans;
-  font-size: 16px;
+  font-family: KBO;
+  font-size: 18px;
   line-height: 1.5;
 `;
 

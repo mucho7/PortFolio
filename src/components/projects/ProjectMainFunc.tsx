@@ -42,8 +42,8 @@ const RowFlexBox = styled.div`
 `;
 
 const TitleTypo = styled.div`
-  font-family: BlackHanSans, sans-serif;
-  font-weight: 400;
+  font-family: KBO, sans-serif;
+  font-weight: 1000;
   color: #222;
   text-align: start;
   font-size: 1.5rem;
@@ -51,10 +51,11 @@ const TitleTypo = styled.div`
 `;
 
 const SmallTypo = styled.li({
-  fontFamily: "noto-sans",
+  fontFamily: "KBO",
   fontSize: "1.1rem",
   fontWeight: 500,
   width: "100%",
+  margin: "0.5rem 0",
 });
 
 export default ProjectMainFunc;

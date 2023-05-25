@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
 import styled from "styled-components";
-import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import { front, back, commnu, versionControl } from "../../assets/images";
 import { useDispatch } from "react-redux";
 import { changeRef } from "store/containerRefSlice";

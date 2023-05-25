@@ -5,7 +5,6 @@ import { changeRef } from "store/containerRefSlice";
 import ArchiveBox from "./ArchiveBox";
 
 import styled from "styled-components";
-import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import { githubButton, velog } from "assets/images";
 
 function Archiving() {

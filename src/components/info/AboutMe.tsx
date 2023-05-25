@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 
 import styled from "styled-components";
-import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import { Grid, Icon, SvgIconTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { changeRef } from "store/containerRefSlice";
@@ -105,8 +104,9 @@ const SmallTypo = styled.div`
   ${StyleForTypo}
   font-size: 1.2rem;
   font-weight: 800;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: KBO;
   white-space: pre-wrap;
+  margin: 0.5rem 0;
 
   color: #212529;
 `;

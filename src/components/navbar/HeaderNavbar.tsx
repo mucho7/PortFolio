@@ -15,7 +15,6 @@ function HeaderNavbar() {
     { name: "Tech Stacks", target: "skillRef" },
     { name: "Archiving", target: "archiveRef" },
     { name: "Projects", target: "projectRef" },
-    // { name: "Career" },
   ];
 
   useEffect(() => {
@@ -102,12 +101,14 @@ const NavItemContainer = styled.div`
 const MyNameBox = styled.div`
   display: inline-block;
   font-weight: 700;
+  font-family: KBO;
   font-size: 1.5rem;
 `;
 
 const NavOption = styled.div`
   cursor: pointer;
   padding: 0.5rem;
+
   &: hover {
     color: white;
     background: gray;

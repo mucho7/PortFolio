@@ -24,7 +24,7 @@ function ArchiveBox(props: ArchiveBoxProps) {
         <NameTypo>{name}</NameTypo>
       </RowFlex>
       <div>{url.slice(8)}</div>
-      <OvTypo>{overview}</OvTypo>
+      <ArchiveOverviewTypo>{overview}</ArchiveOverviewTypo>
       {detail.map((item, index) => {
         return <DesTypo key={index}>{item}</DesTypo>;
       })}
@@ -37,6 +37,7 @@ const ArchiveWrapper = styled.div`
   height: 16rem;
   padding: 2rem;
   background: white;
+  font-family: KBO;
 
   border-radius: 2rem;
   cursor: pointer;
@@ -67,9 +68,8 @@ const RowFlex = styled.div`
 const StyleForTypo = `
   position: relative;
   font-weight: 500;
-
-  font-family: noto-sans;
-  
+  font-family: KBO;
+  font-size: 1.1rem;
   `;
 
 const NameTypo = styled.div`
@@ -78,11 +78,11 @@ const NameTypo = styled.div`
   font-weight: 1000;
 `;
 
-const OvTypo = styled.div`
+const ArchiveOverviewTypo = styled.div`
   ${StyleForTypo}
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  margin: 1rem 0;
+  margin: 2rem 0;
 `;
 
 const DesTypo = styled.li`
