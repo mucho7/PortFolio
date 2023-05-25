@@ -55,10 +55,8 @@ const TitleTypo = styled.div`
 
 const SmallTypo = styled.li({
   fontFamily: "noto-sans",
-  alignSelf: "normal",
-  textAlign: "start",
-  fontSize: 16,
-  fontWeight: 200,
+  fontSize: "1.1rem",
+  fontWeight: 500,
   width: "100%",
 });
 
