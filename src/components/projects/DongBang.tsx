@@ -1,51 +1,60 @@
 import ProjectTemplate from "./ProjectTemplate";
-import { coco1, coco2, coco3, coco4 } from "assets/images";
-
-interface Data {
-  title: string;
-  info: string;
-  content: string;
-  descript: Descript[];
-  images: string[];
-  url: string;
-}
-
-interface Descript {
-  name: string;
-  content: string;
-}
+import {
+  dongbang1,
+  dongbang2,
+  dongbang3,
+  dongbang4,
+  dongbang5,
+  dongbang7,
+  dongbang8,
+  dongbang9,
+  dongbang10,
+  dongbang11,
+  dongbang12,
+} from "assets/images";
 
 function DongBang() {
-  const data: Data = {
+  const data = {
     title: "역검 연습을 위한 동방역검",
-    info: "23년 5월 (SSAFY 6인 프로젝트)",
+    info: "23년 상반기  (SSAFY 6인 프로젝트)",
     url: "https://github.com/mucho7/",
     content:
-      "**코딩테스트를 준비하는 취준생을 위한 실시간 코드 공유 플랫폼**입니다. 기존 코딩 플랫폼의 단점을 보완하여 사용자 입장에서 더 빠르고 편리하게 공부를 진행할 수 있도록 돕기위해 기획한 서비스입니다.\n\n대규모 프로젝트에 처음으로 **React**를 도입하여 개인적으로 의미가 깊었습니다. **Redux**나 **styled-components**같은 기본적인 React라이브러리들을 활용했습니다.\n\n**WebRTC**를 활용하여 사용자들이 실시간 코드를 공유하고 코드를 그림으로 설명할 수 있게 **CanvasAPI**를 활용했습니다.\n\n다양한 **React Hook**에 대해 알 수 있었고 **MSA구조**를 처음으로 도입하며 배포에 대한 기본지식을 배울 수 있었습니다. 그 결과, SSAFY 내부평가에서 좋은 평가를 받아 **2등으로 우수상**을 수상했습니다.",
+      "면접 전 AI 역량검사를 시행하는 기업은 현재 1000개 이상이며 **개발자용 AI 역검** 이 출시되며 대비의 필요성이 커지고 있습니다.\n\n AI 역량검사는 연습을 통해 좋은 결과를 얻을 수 있지만 **지원자를 위한 서비스는 존재하지 않으며 시험 응시 후 정확한 결과를 확인하기 어렵습니다.**\n\n 동방역검은 AI 역량검사 지원자를 위한 서비스로 **AI 역량검사 전략게임을 연습하고 수치화된 게임 채점 결과와 영상 분석 결과를 제공**합니다.",
+    mainFunc: [
+      "전략게임 연습",
+      "게임별 세부 통계",
+      "종합 분석",
+      "빅데이터 사주팔자",
+    ],
     descript: [
-      {
-        name: "주요기능",
-        content:
-          "실시간 코드 공유, Markdown형식의 게시글 본문, VS code형식의 코드 작성, 코드 블록 하이라이팅",
-      },
-      // {
-      //   name: "Github",
-      //   content: "https://github.com/mucho7/CommonProject",
-      // },
       {
         name: "Frontend",
         content: "React, styled-components, Typescript, TensorFlow.js",
       },
       {
         name: "Backend",
-        content: "Spring, Spring Boot",
+        content:
+          "Spring, Spring Boot, JPA, Kurento, FastAPI, SQLAlchemy, Spring Data Mongo, Spring Security",
       },
       {
         name: "Infra",
-        content: "AWS EC2, Jenkins, NginX, Docker",
+        content:
+          "AWS EC2, AWS S3, Jenkins, Firebase, NginX, Docker, kafka, MySQL, MongoDB",
       },
     ],
-    images: [coco1, coco2, coco3, coco4],
+    images: [
+      dongbang4,
+      dongbang3,
+      dongbang2,
+      dongbang1,
+      dongbang5,
+      dongbang7,
+      dongbang8,
+      dongbang9,
+      dongbang10,
+      dongbang11,
+      dongbang12,
+    ],
   };
 
   return <ProjectTemplate data={data} />;

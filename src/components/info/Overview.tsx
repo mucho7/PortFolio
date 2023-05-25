@@ -11,7 +11,7 @@ function Overview() {
       </LargerTypo>
       <StyledHr />
       <SmallTypo>안녕하세요.</SmallTypo>
-      <SmallTypo>최선을 다해 트렌드를 쫓는 개발자 김민찬입니다.</SmallTypo>
+      <SmallTypo>LTS를 사랑하는 개발자 김민찬입니다.</SmallTypo>
     </ShortPR>
   );
 }

@@ -6,12 +6,14 @@ import GitButton from "./GitButton";
 
 import styled from "styled-components";
 import { Grid } from "@mui/material";
+import ProjectMainFunc from "./ProjectMainFunc";
 
 interface ProjectTemplateProps {
   data: {
     title: string;
     info: string;
     content: string;
+    mainFunc: string[];
     descript: Descript[];
     images: string[];
     url: string;
@@ -79,17 +81,19 @@ function ProjectDescript(params: { descript: Descript[]; url: string }) {
 }
 
 function ProjectTemplate(params: ProjectTemplateProps) {
-  const { title, info, content, descript, images, url } = params.data;
+  const { title, info, content, descript, images, url, mainFunc } = params.data;
   return (
     <TemplateBox>
       <TitleTypo>{title}</TitleTypo>
       <InfoTypo>{info}</InfoTypo>
       <Grid container style={{ alignItems: "center" }}>
         <ProjectCarousel images={images} />
+        <Grid item lg={1}></Grid>
         <Grid item xs={12} lg={6}>
           <ColFlexBox>
             <ProjectDetail content={content} />
             <HrLine />
+            <ProjectMainFunc mainFunc={mainFunc ? mainFunc : [""]} />
             <ProjectDescript descript={descript} url={url} />
           </ColFlexBox>
         </Grid>

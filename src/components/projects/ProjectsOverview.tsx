@@ -7,6 +7,8 @@ import styled from "styled-components";
 import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import Coco from "./Coco";
 import HelloWorld from "./HelloWorld";
+import DongBang from "./DongBang";
+import PortFolio from "./PortFolio";
 
 function Projects() {
   const dispatch = useDispatch();
@@ -22,6 +24,8 @@ function Projects() {
       <TitleSection>
         <TitleTypo>PROJECTS</TitleTypo>
       </TitleSection>
+      <DongBang />
+      <PortFolio />
       <HelloWorld />
       <Coco />
     </ProjectSection>

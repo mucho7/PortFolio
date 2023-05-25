@@ -104,7 +104,7 @@ const RowFlex = styled.div`
   padding: 0 6%;
 
   @media (max-width: 1200px) {
-    height: 65rem;
+    height: 45rem;
     padding: 0;
     flex-direction: column;
     justify-content: space-between;
