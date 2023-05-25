@@ -5,10 +5,12 @@ import { Projects } from "./components/projects";
 import { Provider } from "react-redux"; // Provider 추가
 import { store } from "store";
 import { Archiving } from "components/arcive";
+import GlobalStyles from "styles/GlobalStyles";
 
 function App() {
   return (
     <Provider store={store}>
+      <GlobalStyles />
       <HeaderNavbar />
       <Info />
       <Skills />

@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
 import styled from "styled-components";
-import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import { front, back, commnu, versionControl } from "../../assets/images";
 import { useDispatch } from "react-redux";
 import { changeRef } from "store/containerRefSlice";
@@ -40,7 +39,7 @@ function Skills() {
           return (
             <SkillItemBox key={index}>
               <SkillNameTypo>{name}</SkillNameTypo>
-              <SkillImg src={src} />
+              <SkillImg src={src} alt={"기술스택"} />
             </SkillItemBox>
           );
         })}
@@ -73,11 +72,7 @@ const StyleForTypo = `
   font-weight: 400;
 
   z-index: 1;
-
-  @font-face {
-    font-family: 'BlackHanSans';
-    src: url(${BlackHanSans})
-}
+  font-family: 'BlackHanSans';
 `;
 
 const TitleTypo = styled.div`

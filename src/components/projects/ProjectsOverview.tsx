@@ -23,9 +23,9 @@ function Projects() {
       <TitleSection>
         <TitleTypo>PROJECTS</TitleTypo>
       </TitleSection>
-      {/* <DongBang />
+      <DongBang />
       <PortFolio />
-      <HelloWorld /> */}
+      <HelloWorld />
       <Coco />
     </ProjectSection>
   );

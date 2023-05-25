@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import DeskSetUp from "../../assets/images/deskSetUp.jpg";
-import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 
 function Overview() {
   return (
@@ -44,12 +43,8 @@ const StyleForTypo = `
   font-weight: 400;
   text-align: center;
 
+  font-family: 'BlackHanSans';
   z-index: 1;
-
-  @font-face {
-    font-family: 'BlackHanSans';
-    src: url(${BlackHanSans})
-}
 `;
 
 const LargerTypo = styled.div`

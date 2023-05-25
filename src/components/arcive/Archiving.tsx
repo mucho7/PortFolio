@@ -5,7 +5,6 @@ import { changeRef } from "store/containerRefSlice";
 import ArchiveBox from "./ArchiveBox";
 
 import styled from "styled-components";
-import BlackHanSans from "../../assets/fonts/BlackHanSans-Regular.ttf";
 import { githubButton, velog } from "assets/images";
 
 function Archiving() {
@@ -71,16 +70,12 @@ const TitleSection = styled.div`
 `;
 
 const StyleForTypo = `
-      position: relative;
-      font-weight: 400;
-    
-      z-index: 1;
-    
-      @font-face {
-        font-family: 'BlackHanSans';
-        src: url(${BlackHanSans})
-    }
-    `;
+  position: relative;
+  font-weight: 400;
+
+  font-family: 'BlackHanSans';
+  z-index: 1;
+`;
 
 const TitleTypo = styled.div`
   ${StyleForTypo}
