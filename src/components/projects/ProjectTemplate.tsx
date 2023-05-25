@@ -7,6 +7,7 @@ import ProjectMainFunc from "./ProjectMainFunc";
 import styled from "styled-components";
 import { Grid } from "@mui/material";
 import ProjectStacks from "./ProjectStacks";
+import ProjectParticipate from "./ProjectParticipate";
 
 type SingleTechStack = {
   name: string;
@@ -44,6 +45,9 @@ function ProjectTemplate(params: ProjectTemplateProps) {
         <Grid item lg={1}></Grid>
         <Grid item xs={12} xl={6}>
           <ColFlexBox>
+            <HrLine />
+            <ProjectParticipate />
+            <HrLine />
             <ProjectDetail
               dangerouslySetInnerHTML={{ __html: marked(content) }}
             />

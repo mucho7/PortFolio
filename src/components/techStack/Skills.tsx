@@ -73,11 +73,7 @@ const StyleForTypo = `
   font-weight: 400;
 
   z-index: 1;
-
-  @font-face {
-    font-family: 'BlackHanSans';
-    src: url(${BlackHanSans})
-}
+  font-family: 'BlackHanSans';
 `;
 
 const TitleTypo = styled.div`

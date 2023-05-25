@@ -44,12 +44,8 @@ const StyleForTypo = `
   font-weight: 400;
   text-align: center;
 
+  font-family: 'BlackHanSans';
   z-index: 1;
-
-  @font-face {
-    font-family: 'BlackHanSans';
-    src: url(${BlackHanSans})
-}
 `;
 
 const LargerTypo = styled.div`

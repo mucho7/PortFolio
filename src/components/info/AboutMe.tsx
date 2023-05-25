@@ -39,7 +39,7 @@ function AboutMe(params: AboutMeProps) {
           return (
             <Grid item xs={12} md={4} key={index}>
               <AboutMeContentItem>
-                <StyledIcon fontSize='large' component={icon} />
+                <StyledIcon fontSize="large" component={icon} />
                 <div>
                   <SmallTypo>{name}</SmallTypo>
                   <SmallTypo>{value}</SmallTypo>
@@ -68,12 +68,8 @@ const StyleForTypo = `
   position: relative;
   font-weight: 400;
 
+  font-family: 'BlackHanSans';
   z-index: 1;
-
-  @font-face {
-    font-family: 'BlackHanSans';
-    src: url(${BlackHanSans})
-}
 `;
 
 const TitleTypo = styled.div`
