@@ -5,15 +5,16 @@ import { reactjs, styledcomponents, typescript } from "assets/images/techStack";
 
 function PortFolio() {
   const data = {
+    targetNum: 3,
     title: "포트폴리오",
     info: "23년 상반기",
     url: "https://github.com/mucho7/PortFolio",
     content:
       "포트폴리오를 만들어 채용 담당자에게 **내 장점과 역량을 한 눈에** 보여주고자 기획한 페이지입니다.\n\n",
     mainFunc: [
-      "꽤나 괜찮은 디자인",
-      "다양한 이벤트 처리",
-      "배워보고 싶은 기술의 연습장",
+      { content: "꽤나 괜찮은 디자인", isMine: true },
+      { content: "다양한 이벤트 처리", isMine: true },
+      { content: "배워보고 싶은 기술의 연습장", isMine: true },
     ],
     techStack: [
       {

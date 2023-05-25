@@ -20,12 +20,18 @@ type TechStackList = {
   contents: SingleTechStack[];
 };
 
+type SingleMainFunc = {
+  content: string;
+  isMine: boolean;
+};
+
 interface ProjectTemplateProps {
   data: {
+    targetNum: number;
     title: string;
     info: string;
     content: string;
-    mainFunc: string[];
+    mainFunc: SingleMainFunc[];
     techStack: TechStackList[];
     images: string[];
     url: string;
@@ -33,7 +39,7 @@ interface ProjectTemplateProps {
 }
 
 function ProjectTemplate(params: ProjectTemplateProps) {
-  const { title, info, content, techStack, images, url, mainFunc } =
+  const { targetNum, title, info, content, techStack, images, url, mainFunc } =
     params.data;
 
   return (
@@ -46,17 +52,22 @@ function ProjectTemplate(params: ProjectTemplateProps) {
         <Grid item xs={12} xl={6}>
           <ColFlexBox>
             <HrLine />
-            <ProjectParticipate participation={""} />
-            <HrLine />
             <ProjectDetail
               dangerouslySetInnerHTML={{ __html: marked(content) }}
             />
             <HrLine />
-            <ProjectMainFunc mainFunc={mainFunc ? mainFunc : [""]} />
+            <ProjectParticipate participation={""} targetNum={targetNum} />
+            <HrLine />
+            <ProjectMainFunc mainFunc={mainFunc} targetNum={targetNum} />
             {techStack.map((item) => {
               const { title, contents } = item;
               return (
-                <ProjectStacks title={title} contents={contents} key={title} />
+                <ProjectStacks
+                  title={title}
+                  contents={contents}
+                  targetNum={targetNum}
+                  key={title}
+                />
               );
             })}
             <GitButton url={url} />

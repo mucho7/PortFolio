@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useSelector } from "react-redux";
+import { RootState } from "store";
 
 type SingleTechStack = {
   name: string;
@@ -9,18 +11,31 @@ type SingleTechStack = {
 type ProjectStacksProps = {
   title: string;
   contents: SingleTechStack[];
+  targetNum: number;
 };
 
 function ProjectStacks(props: ProjectStacksProps) {
-  const { title, contents } = props;
-
+  const { title, contents, targetNum } = props;
+  const isTarget =
+    useSelector((state: RootState) => state.hoverSlice.target) === targetNum;
   return (
     <RowFlexBox>
       <TitleTypo>{title}</TitleTypo>
       <div>
         {contents.map((content) => {
           const { name, src, isMine } = content;
-          return <TechStackImg src={src} alt={name} key={name} />;
+          return (
+            <TechStackImg
+              src={src}
+              alt={name}
+              key={name}
+              style={{
+                transform:
+                  isMine && isTarget ? "translate3d(0px, -20px, 0)" : "",
+                background: isMine && isTarget ? "rgba(29, 128, 159, 0.2)" : "",
+              }}
+            />
+          );
         })}
       </div>
     </RowFlexBox>
@@ -66,6 +81,7 @@ const TechStackImg = styled.img({
   width: "4rem",
   height: "4rem",
   marginRight: "0.5rem",
+  transitionDuration: "0.5s",
 });
 
 export default ProjectStacks;

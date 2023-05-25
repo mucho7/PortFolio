@@ -1,19 +1,37 @@
 import { marked } from "marked";
+import { useDispatch } from "react-redux";
+import { clearTarget, setTarget } from "store/hoverTargetSlice";
 
 import styled from "styled-components";
 
 type ProjectParticipateProps = {
   participation: string;
+  targetNum: number;
 };
 
 function ProjectParticipate(props: ProjectParticipateProps) {
+  const dispatch = useDispatch();
   //   const { participation } = props;
   const participation = "dkdkdkkdk";
+  const target = 1;
+
+  const handleMouseHover = (event: "enter" | "exit") => {
+    switch (event) {
+      case "enter":
+        dispatch(setTarget(target));
+        break;
+      case "exit":
+        dispatch(clearTarget());
+        break;
+    }
+  };
 
   return (
     <>
       <TitleTypo>맡은 역할</TitleTypo>
       <ParticipationBox
+        onMouseEnter={() => handleMouseHover("enter")}
+        onMouseLeave={() => handleMouseHover("exit")}
         dangerouslySetInnerHTML={{ __html: marked(participation) }}
       />
     </>
