@@ -65,8 +65,9 @@ const ParticipationBox = styled.div`
   font-size: 16px;
   font-family: noto-sans;
   line-height: 1.5;
-
   border-radius: 20px;
+  cursor: pointer;
+
   &: hover {
     background: rgba(29, 128, 159, 0.2);
   }

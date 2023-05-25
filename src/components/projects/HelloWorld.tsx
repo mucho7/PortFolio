@@ -42,7 +42,7 @@ function HelloWorld() {
       { content: "AI 얼굴 인식을 활용한 게임", isMine: false },
       { content: "커뮤니티", isMine: true },
       { content: "사용자 개인 / 영양사 통계", isMine: true },
-      { content: "관리자의 회원 일괄 등록", isMine: false },
+      { content: "관리자의 회원 일괄 등록", isMine: true },
     ],
     techStack: [
       {
