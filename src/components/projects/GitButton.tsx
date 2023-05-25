@@ -17,7 +17,7 @@ function GitButton(props: GitButtonProps) {
       <div>
         <ButtonWrapper onClick={onClickHandler}>
           <GitIcon style={{ backgroundImage: `url(${githubButton})` }} />
-          <GitTypo>Git</GitTypo>
+          <GitTypo>Github</GitTypo>
         </ButtonWrapper>
       </div>
     </RowFlexBox>
@@ -63,7 +63,7 @@ const ButtonWrapper = styled.div({
   display: "flex",
   alignItems: "center",
 
-  width: "6rem",
+  width: "8rem",
   height: "2rem",
   padding: "0.5rem",
   borderRadius: "7px",

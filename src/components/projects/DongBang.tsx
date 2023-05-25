@@ -6,10 +6,10 @@ import {
   firebase,
   jenkins,
   kafka,
-  kotlin,
   kurento,
   mongodb,
   nginx,
+  opencv,
   pytorch,
   reactjs,
   s3,
@@ -50,6 +50,7 @@ function DongBang() {
       {
         title: "Frontend",
         contents: [
+          { name: "Typescript", src: typescript, isMine: true },
           { name: "React", src: reactjs, isMine: true },
           { name: "styled-components", src: styledcomponents, isMine: true },
           { name: "TensorFlow", src: tensorflow, isMine: false },
@@ -58,9 +59,8 @@ function DongBang() {
       {
         title: "AI / ML",
         contents: [
-          // { name: "OpenCV", src: , isMine: true },
+          { name: "OpenCV", src: opencv, isMine: true },
           { name: "Pytorch", src: pytorch, isMine: false },
-          { name: "Typescript", src: typescript, isMine: true },
           { name: "TensorFlow", src: tensorflow, isMine: false },
         ],
       },

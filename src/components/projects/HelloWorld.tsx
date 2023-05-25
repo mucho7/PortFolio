@@ -6,6 +6,7 @@ import {
   jenkins,
   kotlin,
   nginx,
+  opencv,
   pytorch,
   reactjs,
   s3,
@@ -53,7 +54,7 @@ function HelloWorld() {
       {
         title: "AI / ML",
         contents: [
-          // { name: "OpenCV", src: , isMine: true },
+          { name: "OpenCV", src: opencv, isMine: true },
           { name: "Pytorch", src: pytorch, isMine: false },
           { name: "TensorFlow", src: tensorflow, isMine: false },
         ],

@@ -7,7 +7,6 @@ import ProjectMainFunc from "./ProjectMainFunc";
 import styled from "styled-components";
 import { Grid } from "@mui/material";
 import ProjectStacks from "./ProjectStacks";
-import { firebase, spring, typescript } from "assets/images/techStack";
 
 type SingleTechStack = {
   name: string;
@@ -32,13 +31,6 @@ interface ProjectTemplateProps {
   };
 }
 
-function ProjectDetail(params: { content: string }) {
-  const { content } = params;
-  return (
-    <MarkdownWrapper dangerouslySetInnerHTML={{ __html: marked(content) }} />
-  );
-}
-
 function ProjectTemplate(params: ProjectTemplateProps) {
   const { title, info, content, techStack, images, url, mainFunc } =
     params.data;
@@ -50,14 +42,18 @@ function ProjectTemplate(params: ProjectTemplateProps) {
       <Grid container style={{ alignItems: "center" }}>
         <ProjectCarousel images={images} />
         <Grid item lg={1}></Grid>
-        <Grid item xs={12} lg={6}>
+        <Grid item xs={12} xl={6}>
           <ColFlexBox>
-            <ProjectDetail content={content} />
+            <ProjectDetail
+              dangerouslySetInnerHTML={{ __html: marked(content) }}
+            />
             <HrLine />
             <ProjectMainFunc mainFunc={mainFunc ? mainFunc : [""]} />
             {techStack.map((item) => {
               const { title, contents } = item;
-              return <ProjectStacks title={title} contents={contents} />;
+              return (
+                <ProjectStacks title={title} contents={contents} key={title} />
+              );
             })}
             <GitButton url={url} />
           </ColFlexBox>
@@ -74,10 +70,10 @@ const TemplateBox = styled.div`
   background-color: #fff;
 `;
 
-const MarkdownWrapper = styled.div`
+const ProjectDetail = styled.div`
   width: 100%;
-  max-width: 800px;
-  font-family: sans-serif;
+  max-width: 1200px;
+  font-family: noto-sans;
   font-size: 16px;
   line-height: 1.5;
 `;

@@ -9,6 +9,7 @@ import kotlin from "./kotlin.png";
 import kurento from "./kurento.png";
 import mongodb from "./mongodb.png";
 import nginx from "./nginx.svg";
+import opencv from "./opencv.png";
 import pytorch from "./pytorch.png";
 import reactjs from "./reactjs.png";
 import s3 from "./s3.png";
@@ -30,6 +31,7 @@ export {
   kurento,
   mongodb,
   nginx,
+  opencv,
   pytorch,
   reactjs,
   s3,
