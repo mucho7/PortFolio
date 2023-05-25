@@ -1,4 +1,20 @@
 import ProjectTemplate from "./ProjectTemplate";
+
+import {
+  docker,
+  ec2,
+  jenkins,
+  kotlin,
+  nginx,
+  pytorch,
+  reactjs,
+  s3,
+  spring,
+  springboot,
+  styledcomponents,
+  tensorflow,
+} from "assets/images/techStack";
+
 import {
   helloWorld1,
   helloWorld2,
@@ -26,22 +42,39 @@ function HelloWorld() {
       "사용자 개인 / 영양사 통계",
       "관리자의 회원 일괄 등록",
     ],
-    descript: [
+    techStack: [
       {
-        name: "AI / ML",
-        content: "OpenCV, Pytorch, TensorFlow",
+        title: "Frontend",
+        contents: [
+          { name: "React", src: reactjs, isMine: true },
+          { name: "styled-components", src: styledcomponents, isMine: true },
+        ],
       },
       {
-        name: "Frontend",
-        content: "React, styled-components",
+        title: "AI / ML",
+        contents: [
+          // { name: "OpenCV", src: , isMine: true },
+          { name: "Pytorch", src: pytorch, isMine: false },
+          { name: "TensorFlow", src: tensorflow, isMine: false },
+        ],
       },
       {
-        name: "Backend",
-        content: "Spring, Spring Boot, Kotlin, S3",
+        title: "Backend",
+        contents: [
+          { name: "Spring", src: spring, isMine: false },
+          { name: "Spring Boot", src: springboot, isMine: false },
+          { name: "Kotlin", src: kotlin, isMine: false },
+        ],
       },
       {
-        name: "Infra",
-        content: "AWS EC2, Jenkins, NginX, Docker",
+        title: "Infra",
+        contents: [
+          { name: "AWS EC2", src: ec2, isMine: false },
+          { name: "AWS S3", src: s3, isMine: false },
+          { name: "Jenkins", src: jenkins, isMine: false },
+          { name: "NginX", src: nginx, isMine: false },
+          { name: "Docker", src: docker, isMine: false },
+        ],
       },
     ],
     images: [
@@ -57,7 +90,7 @@ function HelloWorld() {
     ],
   };
 
-  // return <ProjectTemplate data={data} />;
+  return <ProjectTemplate data={data} />;
 }
 
 export default HelloWorld;

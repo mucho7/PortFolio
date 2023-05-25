@@ -65,6 +65,7 @@ const TitleTypo = styled.div`
 const TechStackImg = styled.img({
   width: "4rem",
   height: "4rem",
+  marginRight: "0.5rem",
 });
 
 export default ProjectStacks;

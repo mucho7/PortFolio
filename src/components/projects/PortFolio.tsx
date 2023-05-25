@@ -1,5 +1,7 @@
 import ProjectTemplate from "./ProjectTemplate";
-import { portfolio1 } from "assets/images";
+import { githubButton, portfolio1 } from "assets/images";
+
+import { reactjs, styledcomponents, typescript } from "assets/images/techStack";
 
 function PortFolio() {
   const data = {
@@ -13,21 +15,24 @@ function PortFolio() {
       "게임별 세부 통계, 종합 분석",
       "진짜 빅데이터 사주팔자",
     ],
-    descript: [
+    techStack: [
       {
-        name: "Frontend",
-        content: "React, styled-components, Typescript",
+        title: "Frontend",
+        contents: [
+          { name: "React", src: reactjs, isMine: true },
+          { name: "styled-components", src: styledcomponents, isMine: true },
+          { name: "Typescript", src: typescript, isMine: true },
+        ],
       },
       {
-        name: "Infra",
-        content:
-          "AWS EC2, AWS S3, Jenkins, Firebase, NginX, Docker, kafka, MySQL, MongoDB",
+        title: "Infra",
+        contents: [{ name: "Github Page", src: githubButton, isMine: true }],
       },
     ],
     images: [portfolio1],
   };
 
-  // return <ProjectTemplate data={data} />;
+  return <ProjectTemplate data={data} />;
 }
 
 export default PortFolio;

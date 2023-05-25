@@ -1,4 +1,25 @@
 import ProjectTemplate from "./ProjectTemplate";
+
+import {
+  docker,
+  ec2,
+  firebase,
+  jenkins,
+  kafka,
+  kotlin,
+  kurento,
+  mongodb,
+  nginx,
+  pytorch,
+  reactjs,
+  s3,
+  spring,
+  springboot,
+  styledcomponents,
+  tensorflow,
+  typescript,
+} from "assets/images/techStack";
+
 import {
   dongbang1,
   dongbang2,
@@ -25,21 +46,56 @@ function DongBang() {
       "종합 분석",
       "빅데이터 사주팔자",
     ],
-    descript: [
+    techStack: [
       {
-        name: "Frontend",
-        content: "React, styled-components, Typescript, TensorFlow.js",
+        title: "Frontend",
+        contents: [
+          { name: "React", src: reactjs, isMine: true },
+          { name: "styled-components", src: styledcomponents, isMine: true },
+          { name: "TensorFlow", src: tensorflow, isMine: false },
+        ],
       },
       {
-        name: "Backend",
-        content:
-          "Spring, Spring Boot, JPA, Kurento, FastAPI, SQLAlchemy, Spring Data Mongo, Spring Security",
+        title: "AI / ML",
+        contents: [
+          // { name: "OpenCV", src: , isMine: true },
+          { name: "Pytorch", src: pytorch, isMine: false },
+          { name: "Typescript", src: typescript, isMine: true },
+          { name: "TensorFlow", src: tensorflow, isMine: false },
+        ],
       },
       {
-        name: "Infra",
-        content:
-          "AWS EC2, AWS S3, Jenkins, Firebase, NginX, Docker, kafka, MySQL, MongoDB",
+        title: "Backend",
+        contents: [
+          { name: "Spring", src: spring, isMine: false },
+          { name: "Spring Boot", src: springboot, isMine: false },
+          { name: "Kurento", src: kurento, isMine: false },
+        ],
       },
+      {
+        title: "Infra",
+        contents: [
+          { name: "AWS EC2", src: ec2, isMine: false },
+          { name: "AWS S3", src: s3, isMine: false },
+          { name: "Jenkins", src: jenkins, isMine: false },
+          { name: "Firebase", src: firebase, isMine: true },
+          { name: "NginX", src: nginx, isMine: false },
+          { name: "Docker", src: docker, isMine: false },
+          { name: "Kafka", src: kafka, isMine: false },
+          { name: "MongoDB", src: mongodb, isMine: false },
+        ],
+      },
+
+      // {
+      //   name: "Backend",
+      //   content:
+      //     "Spring, Spring Boot, JPA, Kurento, FastAPI, SQLAlchemy, Spring Data Mongo, Spring Security",
+      // },
+      // {
+      //   name: "Infra",
+      //   content:
+      //     "AWS EC2, AWS S3, Jenkins, Firebase, NginX, Docker, kafka, MySQL, MongoDB",
+      // },
     ],
     images: [
       dongbang4,
@@ -55,7 +111,7 @@ function DongBang() {
     ],
   };
 
-  // return <ProjectTemplate data={data} />;
+  return <ProjectTemplate data={data} />;
 }
 
 export default DongBang;

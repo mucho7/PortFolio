@@ -11,6 +11,7 @@ import mongodb from "./mongodb.png";
 import nginx from "./nginx.svg";
 import pytorch from "./pytorch.png";
 import reactjs from "./reactjs.png";
+import s3 from "./s3.png";
 import spring from "./spring.png";
 import springboot from "./springboot.png";
 import styledcomponents from "./styledcomponents.png";
@@ -31,6 +32,7 @@ export {
   nginx,
   pytorch,
   reactjs,
+  s3,
   spring,
   springboot,
   styledcomponents,
