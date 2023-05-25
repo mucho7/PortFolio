@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
   target: 0,
-  persistTarget: 0,
+  persistTarget: false,
 };
 
 const hoverSlice = createSlice({
@@ -10,13 +10,14 @@ const hoverSlice = createSlice({
   initialState,
   reducers: {
     setTarget: (state, action: PayloadAction<number>) => {
+      state.persistTarget = false;
       state.target = action.payload;
     },
-    setPersistTarget: (state, action: PayloadAction<number>) => {
+    setPersistTarget: (state, action: PayloadAction<boolean>) => {
       state.persistTarget = action.payload;
     },
     clearTarget: (state) => {
-      state.target = 0;
+      if (!state.persistTarget) state.target = 0;
     },
   },
 });

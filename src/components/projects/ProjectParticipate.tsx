@@ -1,6 +1,11 @@
-import { marked } from "marked";
 import { useDispatch } from "react-redux";
-import { clearTarget, setTarget } from "store/hoverTargetSlice";
+
+import { marked } from "marked";
+import {
+  clearTarget,
+  setPersistTarget,
+  setTarget,
+} from "store/hoverTargetSlice";
 
 import styled from "styled-components";
 
@@ -10,12 +15,15 @@ type ProjectParticipateProps = {
 };
 
 function ProjectParticipate(props: ProjectParticipateProps) {
-  const dispatch = useDispatch();
   const { targetNum } = props;
+  const dispatch = useDispatch();
   const participation = "dkdkdkkdk";
 
-  const handleMouseHover = (event: "enter" | "exit") => {
+  const handleMouseHover = (event: "click" | "enter" | "exit") => {
     switch (event) {
+      case "click":
+        dispatch(setPersistTarget(true));
+        break;
       case "enter":
         dispatch(setTarget(targetNum));
         break;
@@ -29,6 +37,7 @@ function ProjectParticipate(props: ProjectParticipateProps) {
     <>
       <TitleTypo>맡은 역할</TitleTypo>
       <ParticipationBox
+        onClick={() => handleMouseHover("click")}
         onMouseEnter={() => handleMouseHover("enter")}
         onMouseLeave={() => handleMouseHover("exit")}
         dangerouslySetInnerHTML={{ __html: marked(participation) }}

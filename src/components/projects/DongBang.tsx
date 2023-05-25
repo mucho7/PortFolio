@@ -60,7 +60,7 @@ function DongBang() {
       {
         title: "AI / ML",
         contents: [
-          { name: "OpenCV", src: opencv, isMine: true },
+          { name: "OpenCV", src: opencv, isMine: false },
           { name: "Pytorch", src: pytorch, isMine: false },
           { name: "TensorFlow", src: tensorflow, isMine: false },
         ],
