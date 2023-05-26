@@ -31,6 +31,7 @@ interface ProjectTemplateProps {
     title: string;
     info: string;
     content: string;
+    participation: string[];
     mainFunc: SingleMainFunc[];
     techStack: TechStackList[];
     images: string[];
@@ -39,8 +40,17 @@ interface ProjectTemplateProps {
 }
 
 function ProjectTemplate(params: ProjectTemplateProps) {
-  const { targetNum, title, info, content, techStack, images, url, mainFunc } =
-    params.data;
+  const {
+    targetNum,
+    title,
+    info,
+    content,
+    participation,
+    techStack,
+    images,
+    url,
+    mainFunc,
+  } = params.data;
 
   return (
     <TemplateBox>
@@ -56,7 +66,10 @@ function ProjectTemplate(params: ProjectTemplateProps) {
               dangerouslySetInnerHTML={{ __html: marked(content) }}
             />
             <HrLine />
-            <ProjectParticipate participation={""} targetNum={targetNum} />
+            <ProjectParticipate
+              participation={participation}
+              targetNum={targetNum}
+            />
             <HrLine />
             <ProjectMainFunc mainFunc={mainFunc} targetNum={targetNum} />
             {techStack.map((item) => {

@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux";
 
-import { marked } from "marked";
 import {
   clearTarget,
   setPersistTarget,
@@ -10,14 +9,13 @@ import {
 import styled from "styled-components";
 
 type ProjectParticipateProps = {
-  participation: string;
+  participation: string[];
   targetNum: number;
 };
 
 function ProjectParticipate(props: ProjectParticipateProps) {
-  const { targetNum } = props;
+  const { participation, targetNum } = props;
   const dispatch = useDispatch();
-  const participation = "dkdkdkkdk";
 
   const handleMouseHover = (event: "click" | "enter" | "exit") => {
     switch (event) {
@@ -40,8 +38,13 @@ function ProjectParticipate(props: ProjectParticipateProps) {
         onClick={() => handleMouseHover("click")}
         onMouseEnter={() => handleMouseHover("enter")}
         onMouseLeave={() => handleMouseHover("exit")}
-        dangerouslySetInnerHTML={{ __html: marked(participation) }}
-      />
+      >
+        <ul>
+          {participation.map((item, index) => {
+            return <SmallTypo key={index}>{item}</SmallTypo>;
+          })}
+        </ul>
+      </ParticipationBox>
     </>
   );
 }
@@ -72,5 +75,14 @@ const ParticipationBox = styled.div`
     background: rgba(29, 128, 159, 0.2);
   }
 `;
+
+const SmallTypo = styled.li({
+  fontFamily: "KBO",
+  fontSize: "1.3rem",
+  fontWeight: 500,
+  borderRadius: "1rem",
+  margin: "0.5rem 0",
+  transitionDuration: "0.5s",
+});
 
 export default ProjectParticipate;
