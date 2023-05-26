@@ -22,12 +22,13 @@ function PortFolio() {
       "styled-components를 이용한 GlobalStyle 적용",
     ],
     content:
-      "포트폴리오를 만들어 채용 담당자에게 **내 장점과 역량을 한 눈에** 보여주고자 기획한 페이지입니다.\n\n",
+      "포트폴리오를 만들어 채용 담당자에게 **내 장점과 역량을 한 눈에** 보여주고자 기획한 페이지입니다.\n\n또한, 반응형, 상태관리, hover나 click에 따른 다양한 효과 등 그동안 프로젝트를 진행하며 배웠던 FrontEnd의 기술들을 다시 한 번 적용함으로써 발전하고 있습니다.",
     mainFunc: [
       { content: "반응형 웹", isMine: true },
+      { content: "유지보수", isMine: true },
       { content: "다양한 이벤트 처리", isMine: true },
       { content: "상태관리를 활용한 복합적 이벤트", isMine: true },
-      { content: "TS, NextJS 등 배워보고 싶은 기술의 연습장", isMine: true },
+      { content: "배웠거나 배워보고 싶은 기술의 연습장", isMine: true },
     ],
     techStack: [
       {
