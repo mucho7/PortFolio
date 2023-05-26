@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/PortFolio/static/css/main.2e9fb1a6.css",
-    "main.js": "/PortFolio/static/js/main.9e90dd31.js",
+    "main.js": "/PortFolio/static/js/main.7a40e502.js",
     "static/js/787.2e9b76fa.chunk.js": "/PortFolio/static/js/787.2e9b76fa.chunk.js",
     "static/media/KBO_Dia_Gothic_medium.ttf": "/PortFolio/static/media/KBO_Dia_Gothic_medium.86277cf8b7effb3dd1b1.ttf",
     "static/media/BlackHanSans-Regular.ttf": "/PortFolio/static/media/BlackHanSans-Regular.f4f89062321390018f92.ttf",
@@ -58,11 +58,11 @@
     "static/media/slick.woff": "/PortFolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/PortFolio/index.html",
     "main.2e9fb1a6.css.map": "/PortFolio/static/css/main.2e9fb1a6.css.map",
-    "main.9e90dd31.js.map": "/PortFolio/static/js/main.9e90dd31.js.map",
+    "main.7a40e502.js.map": "/PortFolio/static/js/main.7a40e502.js.map",
     "787.2e9b76fa.chunk.js.map": "/PortFolio/static/js/787.2e9b76fa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2e9fb1a6.css",
-    "static/js/main.9e90dd31.js"
+    "static/js/main.7a40e502.js"
   ]
 }
