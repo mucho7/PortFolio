@@ -20,7 +20,7 @@ function ProjectCarousel(params: { images: string[] }) {
   };
 
   return (
-    <Grid item xs={12} xl={5}>
+    <Grid item xs={12}>
       <StyledSlider ref={sliderRef} {...settings}>
         {images.map((image, index) => {
           return <Image src={image} alt={"카루젤 그림"} key={index} />;

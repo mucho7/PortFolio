@@ -1,5 +1,7 @@
-import { useSelector } from "react-redux";
+import { Button } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "store";
+import { setPersistTarget, setTarget } from "store/hoverTargetSlice";
 
 import styled from "styled-components";
 
@@ -14,9 +16,15 @@ type MainFuncProps = {
 };
 
 function ProjectMainFunc(params: MainFuncProps) {
+  const dispatch = useDispatch();
   const { mainFunc, targetNum } = params;
   const isTarget =
     useSelector((state: RootState) => state.hoverSlice.target) === targetNum;
+
+  const onMobileTouch = () => {
+    dispatch(setTarget(targetNum));
+    dispatch(setPersistTarget(true));
+  };
 
   return (
     <RowFlexBox>
@@ -38,13 +46,20 @@ function ProjectMainFunc(params: MainFuncProps) {
           );
         })}
       </ul>
+      <ParticipateMobileButton
+        style={{ display: window.innerWidth > 1200 ? "none" : "" }}
+        onClick={onMobileTouch}
+      >
+        맡은 역할 보기
+      </ParticipateMobileButton>
     </RowFlexBox>
   );
 }
 
 const RowFlexBox = styled.div`
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   width: 100%;
 
@@ -74,7 +89,7 @@ const TitleTypo = styled.div`
   color: #222;
   text-align: start;
   font-size: 1.5rem;
-  width: 100%;
+  width: fit-content;
 `;
 
 const SmallTypo = styled.li({
@@ -87,5 +102,22 @@ const SmallTypo = styled.li({
   padding: "0.2rem 1rem",
   transitionDuration: "0.5s",
 });
+
+const ParticipateMobileButton = styled.button`
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  padding: 0.5rem;
+
+  font-size: 1.2rem;
+  font-family: KBO;
+  color: white;
+  background: black;
+  border: none;
+  border-radius: 1rem;
+
+  cursor: pointer;
+`;
 
 export default ProjectMainFunc;

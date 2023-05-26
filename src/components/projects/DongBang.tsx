@@ -12,6 +12,7 @@ import {
   opencv,
   pytorch,
   reactjs,
+  redux,
   s3,
   spring,
   springboot,
@@ -65,6 +66,7 @@ function DongBang() {
         contents: [
           { name: "Typescript", src: typescript, isMine: true },
           { name: "React", src: reactjs, isMine: true },
+          { name: "Redux", src: redux, isMine: true },
           { name: "styled-components", src: styledcomponents, isMine: true },
           { name: "TensorFlow", src: tensorflow, isMine: true },
         ],

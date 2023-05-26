@@ -9,6 +9,7 @@ import {
   opencv,
   pytorch,
   reactjs,
+  redux,
   s3,
   spring,
   springboot,
@@ -58,6 +59,7 @@ function HelloWorld() {
         title: "Frontend",
         contents: [
           { name: "React", src: reactjs, isMine: true },
+          { name: "Redux", src: redux, isMine: true },
           { name: "styled-components", src: styledcomponents, isMine: true },
         ],
       },

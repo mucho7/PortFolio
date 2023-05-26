@@ -10,7 +10,7 @@ const hoverSlice = createSlice({
   initialState,
   reducers: {
     setTarget: (state, action: PayloadAction<number>) => {
-      state.persistTarget = false;
+      if (state.target !== action.payload) state.persistTarget = false;
       state.target = action.payload;
     },
     setPersistTarget: (state, action: PayloadAction<boolean>) => {

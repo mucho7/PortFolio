@@ -1,4 +1,5 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "store";
 
 import {
   clearTarget,
@@ -14,8 +15,10 @@ type ProjectParticipateProps = {
 };
 
 function ProjectParticipate(props: ProjectParticipateProps) {
-  const { participation, targetNum } = props;
   const dispatch = useDispatch();
+  const { participation, targetNum } = props;
+  const isTarget =
+    useSelector((state: RootState) => state.hoverSlice.target) === targetNum;
 
   const handleMouseHover = (event: "click" | "enter" | "exit") => {
     switch (event) {
@@ -38,6 +41,7 @@ function ProjectParticipate(props: ProjectParticipateProps) {
         onClick={() => handleMouseHover("click")}
         onMouseEnter={() => handleMouseHover("enter")}
         onMouseLeave={() => handleMouseHover("exit")}
+        style={{ background: isTarget ? "rgba(29, 128, 159, 0.2)" : "white" }}
       >
         <ul>
           {participation.map((item, index) => {

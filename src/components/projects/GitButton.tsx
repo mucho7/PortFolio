@@ -13,7 +13,6 @@ function GitButton(props: GitButtonProps) {
 
   return (
     <RowFlexBox>
-      <TitleTypo>Github</TitleTypo>
       <div>
         <ButtonWrapper onClick={onClickHandler}>
           <GitIcon style={{ backgroundImage: `url(${githubButton})` }} />
@@ -29,14 +28,6 @@ const RowFlexBox = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-
-  & > *:first-child {
-    flex-basis: 30%;
-  }
-
-  & > *:last-child {
-    flex-basis: 70%;
-  }
 
   @media (max-width: 768px) {
     flex-direction: column;

@@ -59,7 +59,9 @@ const SmallTypo = styled.div`
   ${StyleForTypo}
   font-size: 1.2rem;
   font-weight: 800;
+  font-family: KBO;
   white-space: pre-wrap;
+  line-height: 2rem;
 
   color: rgba(255, 255, 255, 0.6);
 `;

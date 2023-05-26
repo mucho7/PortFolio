@@ -58,18 +58,13 @@ function ProjectTemplate(params: ProjectTemplateProps) {
       <InfoTypo>{info}</InfoTypo>
       <Grid container style={{ alignItems: "center" }}>
         <ProjectCarousel images={images} />
-        <Grid item lg={1}></Grid>
-        <Grid item xs={12} xl={6}>
+        <Grid item xs={12}>
           <ColFlexBox>
             <HrLine />
             <ProjectDetail
               dangerouslySetInnerHTML={{ __html: marked(content) }}
             />
-            <HrLine />
-            <ProjectParticipate
-              participation={participation}
-              targetNum={targetNum}
-            />
+
             <HrLine />
             <ProjectMainFunc mainFunc={mainFunc} targetNum={targetNum} />
             {techStack.map((item) => {
@@ -83,6 +78,11 @@ function ProjectTemplate(params: ProjectTemplateProps) {
                 />
               );
             })}
+            <HrLine />
+            <ProjectParticipate
+              participation={participation}
+              targetNum={targetNum}
+            />
             <GitButton url={url} />
           </ColFlexBox>
         </Grid>
@@ -93,7 +93,7 @@ function ProjectTemplate(params: ProjectTemplateProps) {
 
 const TemplateBox = styled.div`
   padding: 3rem;
-  margin: 0 auto 2rem;
+  margin: 0 auto 10rem;
   border-radius: 1rem;
   background-color: #fff;
 `;

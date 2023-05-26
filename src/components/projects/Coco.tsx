@@ -4,6 +4,7 @@ import {
   jenkins,
   nginx,
   reactjs,
+  redux,
   spring,
   springboot,
   styledcomponents,
@@ -38,6 +39,7 @@ function Coco() {
         title: "Frontend",
         contents: [
           { name: "React", src: reactjs, isMine: true },
+          { name: "Redux", src: redux, isMine: true },
           { name: "styled-components", src: styledcomponents, isMine: true },
         ],
       },

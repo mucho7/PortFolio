@@ -76,6 +76,10 @@ const TitleTypo = styled.div`
   font-size: 1.5rem;
   text-align: start;
   color: #222;
+
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+  }
 `;
 
 const TechStackImg = styled.img({

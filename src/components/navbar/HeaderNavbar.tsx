@@ -13,8 +13,8 @@ function HeaderNavbar() {
   const navOptions: { name: string; target: TargetType }[] = [
     { name: "About me", target: "infoRef" },
     { name: "Tech Stacks", target: "skillRef" },
-    { name: "Archiving", target: "archiveRef" },
     { name: "Projects", target: "projectRef" },
+    { name: "Archiving", target: "archiveRef" },
   ];
 
   useEffect(() => {

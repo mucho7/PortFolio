@@ -1,12 +1,17 @@
 import ProjectTemplate from "./ProjectTemplate";
 import { githubButton, portfolio1 } from "assets/images";
 
-import { reactjs, styledcomponents, typescript } from "assets/images/techStack";
+import {
+  reactjs,
+  redux,
+  styledcomponents,
+  typescript,
+} from "assets/images/techStack";
 
 function PortFolio() {
   const data = {
     targetNum: 3,
-    title: "포트폴리오",
+    title: "포트폴리오 웹 페이지 구현",
     info: "23년 상반기",
     url: "https://github.com/mucho7/PortFolio",
     participation: [
@@ -27,6 +32,7 @@ function PortFolio() {
         contents: [
           { name: "Typescript", src: typescript, isMine: true },
           { name: "React", src: reactjs, isMine: true },
+          { name: "Redux", src: redux, isMine: true },
           { name: "styled-components", src: styledcomponents, isMine: true },
         ],
       },

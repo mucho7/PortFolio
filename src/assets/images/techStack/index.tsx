@@ -12,6 +12,7 @@ import nginx from "./nginx.svg";
 import opencv from "./opencv.png";
 import pytorch from "./pytorch.png";
 import reactjs from "./reactjs.png";
+import redux from "./redux.png";
 import s3 from "./s3.png";
 import spring from "./spring.png";
 import springboot from "./springboot.png";
@@ -34,6 +35,7 @@ export {
   opencv,
   pytorch,
   reactjs,
+  redux,
   s3,
   spring,
   springboot,

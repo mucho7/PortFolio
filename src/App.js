@@ -14,8 +14,8 @@ function App() {
       <HeaderNavbar />
       <Info />
       <Skills />
-      <Archiving />
       <Projects />
+      <Archiving />
     </Provider>
   );
 }
