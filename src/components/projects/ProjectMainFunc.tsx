@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "store";
 import { setPersistTarget, setTarget } from "store/hoverTargetSlice";
@@ -21,9 +20,14 @@ function ProjectMainFunc(params: MainFuncProps) {
   const isTarget =
     useSelector((state: RootState) => state.hoverSlice.target) === targetNum;
 
-  const onMobileTouch = () => {
-    dispatch(setTarget(targetNum));
-    dispatch(setPersistTarget(true));
+  const onToggleClickHandler = () => {
+    if (isTarget) {
+      dispatch(setTarget(0));
+      dispatch(setPersistTarget(false));
+    } else {
+      dispatch(setTarget(targetNum));
+      dispatch(setPersistTarget(true));
+    }
   };
 
   return (
@@ -48,7 +52,7 @@ function ProjectMainFunc(params: MainFuncProps) {
       </ul>
       <ParticipateMobileButton
         style={{ display: window.innerWidth > 1200 ? "none" : "" }}
-        onClick={onMobileTouch}
+        onClick={onToggleClickHandler}
       >
         맡은 역할 보기
       </ParticipateMobileButton>
@@ -105,7 +109,7 @@ const SmallTypo = styled.li({
 
 const ParticipateMobileButton = styled.button`
   position: absolute;
-  right: 0;
+  left: 0;
   top: 0;
 
   padding: 0.5rem;
@@ -118,6 +122,11 @@ const ParticipateMobileButton = styled.button`
   border-radius: 1rem;
 
   cursor: pointer;
+  transition-duration: 1s;
+
+  &: hover {
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 export default ProjectMainFunc;
