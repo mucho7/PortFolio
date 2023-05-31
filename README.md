@@ -20,7 +20,7 @@
 
 ## 개발 과정
 
-- ver 1.0 (23.04.28)![image-20230531142800041](C:\Users\SSAFY\Desktop\personal\PortFolio\README.assets\image-20230531142800041.png)
+- ver 1.0 (23.04.28)![image-20230531142800041](.\README.assets\image-20230531142800041.png)
 
   
 
