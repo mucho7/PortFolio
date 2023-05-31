@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toTargetRef } from "store/containerRefSlice";
+import { Menu } from "@mui/icons-material";
 
 import styled from "styled-components";
+import { Icon } from "@mui/material";
+import HeaderMenu from "./HeaderMenu";
+import HeaderHamburger from "./HeaderHamburger";
 
 type TargetType = "infoRef" | "skillRef" | "archiveRef" | "projectRef";
 
@@ -46,20 +50,14 @@ function HeaderNavbar() {
     <StyledHeader scrolled={scrolled}>
       <NavContainer>
         <MyNameBox>김민찬 Portfolio</MyNameBox>
-        {innerSize < 1000 ? (
+        {innerSize < 1200 ? (
           // 햄버거 버튼 추가 요망
-          <></>
+          <HeaderHamburger
+            onClickHandler={onClickHandler}
+            navOptions={navOptions}
+          />
         ) : (
-          <NavItemContainer>
-            {navOptions.map((option, index) => {
-              const { name, target } = option;
-              return (
-                <NavOption onClick={() => onClickHandler(target)} key={index}>
-                  {name}
-                </NavOption>
-              );
-            })}
-          </NavItemContainer>
+          <HeaderMenu onClickHandler={onClickHandler} navOptions={navOptions} />
         )}
       </NavContainer>
     </StyledHeader>
@@ -91,28 +89,11 @@ const NavContainer = styled.div`
   padding: 1.25rem 2rem;
 `;
 
-const NavItemContainer = styled.div`
-  ${getThemRow}
-  font-weight: 700;
-  font-size: 1rem;
-  width: 40%;
-`;
-
 const MyNameBox = styled.div`
   display: inline-block;
   font-weight: 700;
   font-family: KBO;
   font-size: 1.5rem;
-`;
-
-const NavOption = styled.div`
-  cursor: pointer;
-  padding: 0.5rem;
-
-  &: hover {
-    color: white;
-    background: gray;
-  }
 `;
 
 export default HeaderNavbar;

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "store";
 import { setPersistTarget, setTarget } from "store/hoverTargetSlice";
@@ -17,6 +18,7 @@ type MainFuncProps = {
 function ProjectMainFunc(params: MainFuncProps) {
   const dispatch = useDispatch();
   const { mainFunc, targetNum } = params;
+  const [innerSize, setInnerSize] = useState<number>(0);
   const isTarget =
     useSelector((state: RootState) => state.hoverSlice.target) === targetNum;
 
@@ -29,6 +31,20 @@ function ProjectMainFunc(params: MainFuncProps) {
       dispatch(setPersistTarget(true));
     }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setInnerSize(window.innerWidth);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <RowFlexBox>
@@ -51,7 +67,7 @@ function ProjectMainFunc(params: MainFuncProps) {
         })}
       </ul>
       <ParticipateMobileButton
-        style={{ display: window.innerWidth > 1200 ? "none" : "" }}
+        style={{ display: innerSize > 1200 ? "none" : "" }}
         onClick={onToggleClickHandler}
       >
         맡은 역할 보기

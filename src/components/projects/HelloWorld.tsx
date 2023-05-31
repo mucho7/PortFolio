@@ -50,7 +50,7 @@ function HelloWorld() {
     ],
     content:
       "**AI를 활용해 먹은 량을 측정하는 구내식당 플랫폼**입니다. 음식물 쓰레기로 인해 발생하는 경제적 / 환경적 손실을 줄이고자 기획한 프로젝트입니다.\n\n**사용자와 매니저에게 각각 모바일과 데스크탑 웹**을 제공하여 UIUX적인 측면에서 접근성을 높이고자 했습니다. 업무의 양이 많아 기존에 사용해봤던 **React**와 **styled-components**를 활용해서 프로젝트를 진행했습니다",
-    url: "https://github.com/mucho7/HelloWorld",
+    url: "https://github.com/mucho7/hell-banquet",
     mainFunc: [
       { content: "AI를 이용한 식사량 / 잔반량 기록", isMine: true },
       { content: "AI 그림인식으로 캐릭터에게 선물주기", isMine: true },
