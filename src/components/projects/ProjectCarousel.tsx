@@ -30,10 +30,16 @@ function ProjectCarousel(params: { images: string[] }) {
   );
 }
 
-const StyledSlider = styled(Slider)({
-  maxWidth: "100%",
-  marginBottom: "2rem",
-});
+const StyledSlider = styled(Slider)`
+  max-width: 100%;
+  max-height: 100%;
+  margin-bottom: 2rem;
+
+  .slick-track {
+    display: flex;
+    place-items: center;
+  }
+`;
 
 const Image = styled.img({
   width: "100%",

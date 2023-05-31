@@ -13,12 +13,10 @@ function GitButton(props: GitButtonProps) {
 
   return (
     <RowFlexBox>
-      <div>
-        <ButtonWrapper onClick={onClickHandler}>
-          <GitIcon style={{ backgroundImage: `url(${githubButton})` }} />
-          <GitTypo>Github</GitTypo>
-        </ButtonWrapper>
-      </div>
+      <ButtonWrapper onClick={onClickHandler}>
+        <GitIcon style={{ backgroundImage: `url(${githubButton})` }} />
+        <GitTypo>Github</GitTypo>
+      </ButtonWrapper>
     </RowFlexBox>
   );
 }
@@ -39,15 +37,6 @@ const RowFlexBox = styled.div`
       flex-basis: 100%;
     }
   }
-`;
-
-const TitleTypo = styled.div`
-  font-family: BlackHanSans, sans-serif;
-  font-weight: 400;
-  color: #222;
-  text-align: start;
-  font-size: 1.5rem;
-  width: 100%;
 `;
 
 const ButtonWrapper = styled.div({

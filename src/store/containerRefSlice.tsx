@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 
 type RefType = {
   target: "infoRef" | "skillRef" | "archiveRef" | "projectRef";
@@ -25,6 +25,7 @@ const refSlice = createSlice({
         "infoRef" | "skillRef" | "archiveRef" | "projectRef"
       >
     ) => {
+      console.log(current(state));
       window.scrollTo({ top: state[action.payload], behavior: "smooth" });
     },
   },
