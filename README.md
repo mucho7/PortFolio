@@ -20,9 +20,9 @@
 
 ## 개발 과정
 
-- ver 1.0 (23.04.28)
+- ver 1.0 (23.04.28)![image-20230531142800041](C:\Users\SSAFY\Desktop\personal\PortFolio\README.assets\image-20230531142800041.png)
 
-  ![image-20230531142800041](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20230531142800041.png)
+  
 
   - 기본적인 레이아웃 구성
 
