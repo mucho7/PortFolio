@@ -20,7 +20,8 @@
 
 ## 개발 과정
 
-- ver 1.0 (23.04.28)![image-20230531142800041](.\README.assets\image-20230531142800041.png)
+- ver 1.0 (23.04.28)
+<img src="README.assets/image-20230531142800041.png" alt="ver1.0" width="500" data-align="center">
 
   
 
