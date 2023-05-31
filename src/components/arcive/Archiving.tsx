@@ -36,10 +36,10 @@ function Archiving() {
     },
   ];
 
-  useEffect(() => {
-    const targetRef = archiveRef.current ? archiveRef.current.offsetTop : 0;
-    dispatch(changeRef({ target: "archiveRef", value: targetRef }));
-  }, [dispatch, archiveRef]);
+  // useEffect(() => {
+  //   const targetRef = archiveRef.current ? archiveRef.current.offsetTop : 0;
+  //   dispatch(changeRef({ target: "archiveRef", value: targetRef }));
+  // }, [dispatch, archiveRef]);
 
   return (
     <ArchiveSection ref={archiveRef}>

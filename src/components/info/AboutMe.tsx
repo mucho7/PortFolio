@@ -38,7 +38,7 @@ function AboutMe(params: AboutMeProps) {
           return (
             <Grid item xs={12} md={4} key={index}>
               <AboutMeContentItem>
-                <StyledIcon fontSize="large" component={icon} />
+                <StyledIcon fontSize='large' component={icon} />
                 <div>
                   <SmallTypo>{name}</SmallTypo>
                   <SmallTypo>{value}</SmallTypo>

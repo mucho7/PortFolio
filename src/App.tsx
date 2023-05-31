@@ -1,21 +1,13 @@
-import { HeaderNavbar } from "./components/navbar";
-import { Info } from "./components/info";
-import { Skills } from "./components/techStack";
-import { Projects } from "./components/projects";
-import { Provider } from "react-redux"; // Provider 추가
 import { store } from "store";
-import { Archiving } from "components/arcive";
+import { Provider } from "react-redux";
 import GlobalStyles from "styles/GlobalStyles";
+import PortFolio from "pages/PortFolio";
 
 function App() {
   return (
     <Provider store={store}>
       <GlobalStyles />
-      <HeaderNavbar />
-      <Info />
-      <Skills />
-      <Projects />
-      <Archiving />
+      <PortFolio />
     </Provider>
   );
 }
