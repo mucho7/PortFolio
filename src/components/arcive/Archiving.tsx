@@ -1,15 +1,15 @@
-import { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+// import { useEffect, useRef } from "react";
+// import { useDispatch } from "react-redux";
 
-import { changeRef } from "store/containerRefSlice";
+// import { changeRef } from "store/containerRefSlice";
 import ArchiveBox from "./ArchiveBox";
 
 import styled from "styled-components";
 import { githubButton, velog } from "assets/images";
 
 function Archiving() {
-  const dispatch = useDispatch();
-  const archiveRef = useRef<HTMLDivElement>(null);
+  // const dispatch = useDispatch();
+  // const archiveRef = useRef<HTMLDivElement>(null);
 
   const archiveInfos = [
     {
@@ -42,7 +42,8 @@ function Archiving() {
   // }, [dispatch, archiveRef]);
 
   return (
-    <ArchiveSection ref={archiveRef}>
+    // <ArchiveSection ref={archiveRef}>
+    <ArchiveSection>
       <TitleSection>
         <TitleTypo>ARCHIVING</TitleTypo>
       </TitleSection>
